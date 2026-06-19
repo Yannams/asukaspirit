@@ -40,11 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Figma and agent files
-figma_data.json
-AGENTS.md
-CLAUDE.md
-/scripts/
-public/images/
-public/images_registry.json
 
