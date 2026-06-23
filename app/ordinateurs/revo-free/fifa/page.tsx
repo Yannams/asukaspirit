@@ -32,7 +32,7 @@ export default function RevoFreeFifaPage() {
     <div className="flex flex-col min-h-screen">
       {/* Navigation bar */}
       <div className="bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200/50 py-4">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <Link href="/ordinateurs/revo-free" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">
             <ArrowLeft size={14} />
             Retour à la gamme Revo Free
@@ -42,7 +42,7 @@ export default function RevoFreeFifaPage() {
 
       {/* Product Hero */}
       <section className="py-20 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3.5 py-1.5 rounded-full w-max">
               <Sparkles size={12} />
@@ -54,20 +54,19 @@ export default function RevoFreeFifaPage() {
             <p className="font-display font-bold text-lg text-accent uppercase leading-relaxed">
               Le PC essentiel pour vos besoins quotidiens
             </p>
-            <p className="text-muted text-sm md:text-base leading-relaxed text-justify">
+            <p className="text-muted text-sm md:text-base leading-relaxed text-left">
               Le REVO FIFA est un ordinateur portable conçu pour répondre efficacement aux besoins du quotidien. Léger, pratique et accessible, il offre les performances nécessaires pour la navigation internet, la bureautique, les cours en ligne, les réseaux sociaux et le multimédia.
             </p>
-            <p className="text-muted text-sm leading-relaxed text-justify">
+            <p className="text-muted text-sm leading-relaxed text-left">
               Que vous soyez étudiant, professionnel ou particulier, le REVO FIFA vous accompagne dans toutes vos tâches essentielles.
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 shadow-lg">
-            <FigmaImage
-              nodeId="304:1396"
+          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 dark:border-neutral-900 shadow-lg bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center p-6 h-80 select-none">
+            <img
+              src="/images/laptop_free.png"
               alt="Revo Free FIFA PC"
-              fallbackType="laptop"
-              className="w-full h-80 object-cover"
+              className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>
@@ -75,7 +74,7 @@ export default function RevoFreeFifaPage() {
 
       {/* Benefits & Ideal For */}
       <section className="py-20 bg-neutral-50 dark:bg-neutral-950 border-y border-neutral-100 dark:border-neutral-900">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Why choose */}
           <div className="bg-white dark:bg-neutral-900 border border-neutral-200/50 dark:border-neutral-800/50 rounded-3xl p-8 shadow-sm">
             <h2 className="font-display font-extrabold text-xl uppercase mb-6 text-black dark:text-white">
@@ -110,7 +109,7 @@ export default function RevoFreeFifaPage() {
 
       {/* Tech specs & Detailed text */}
       <section className="py-24 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Tech table */}
           <div className="lg:col-span-7 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/50 dark:border-neutral-800/50 rounded-3xl p-8 shadow-sm">
             <h2 className="font-display font-extrabold text-xl uppercase mb-6 text-black dark:text-white flex items-center gap-2">
@@ -135,10 +134,10 @@ export default function RevoFreeFifaPage() {
             <h3 className="font-display font-bold text-lg text-accent uppercase">
               REVO FREE, la révolution
             </h3>
-            <p className="text-muted text-sm leading-relaxed text-justify">
+            <p className="text-muted text-sm leading-relaxed text-left">
               Grâce à son SSD de 512 Go, le REVO FIFA offre un démarrage rapide du système et une meilleure réactivité des applications. Son processeur Intel Celeron associé à 4 Go de RAM garantit une expérience fluide pour les usages essentiels.
             </p>
-            <p className="text-muted text-sm leading-relaxed text-justify">
+            <p className="text-muted text-sm leading-relaxed text-left">
               Avec le REVO FIFA, profitez d'un ordinateur fiable, élégant et performant pour toutes vos activités quotidiennes, sans compromis sur votre budget.
             </p>
             <div className="mt-4 p-4 border-l-4 border-accent bg-accent/5 rounded-r-xl">

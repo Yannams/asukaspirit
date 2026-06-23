@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="8" fill="#121212" />
+  <!-- Orange Spade (primary brand mark) -->
+  <path d="M16 6C12.5 6 10.5 9.5 10.5 13C10.5 16.5 13.2 18 15.2 18C15.6 18 15.6 19.5 14.4 21C13.2 22.5 12 25 12 25H20C20 25 18.8 22.5 17.6 21C16.4 19.5 16.4 18 16.8 18C18.8 18 21.5 16.5 21.5 13C21.5 9.5 19.5 6 16 6Z" fill="#f47639" />
+</svg>
