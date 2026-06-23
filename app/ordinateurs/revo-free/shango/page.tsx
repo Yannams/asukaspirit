@@ -22,7 +22,7 @@ export default function RevoFreeShangoPage() {
     <div className="flex flex-col min-h-screen">
       {/* Navigation bar */}
       <div className="bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200/50 py-4">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <Link href="/ordinateurs/revo-free" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">
             <ArrowLeft size={14} />
             Retour à la gamme Revo Free
@@ -32,7 +32,7 @@ export default function RevoFreeShangoPage() {
 
       {/* Product Hero */}
       <section className="py-20 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3.5 py-1.5 rounded-full w-max">
               <Sparkles size={12} />
@@ -49,12 +49,11 @@ export default function RevoFreeShangoPage() {
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 shadow-lg">
-            <FigmaImage
-              nodeId="277:1228"
+          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 dark:border-neutral-900 shadow-lg bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center p-6 h-80 select-none">
+            <img
+              src="/images/laptop_free.png"
               alt="Revo Free Shango PC"
-              fallbackType="laptop"
-              className="w-full h-80 object-cover"
+              className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>
@@ -62,7 +61,7 @@ export default function RevoFreeShangoPage() {
 
       {/* Tech specs & Targets */}
       <section className="py-24 bg-neutral-50 dark:bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Specs */}
           <div className="bg-white dark:bg-neutral-900 border border-neutral-200/50 dark:border-neutral-800/50 rounded-3xl p-8 shadow-sm">
             <h2 className="font-display font-extrabold text-xl uppercase mb-6 flex items-center gap-2 text-black dark:text-white">

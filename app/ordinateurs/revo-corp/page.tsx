@@ -80,7 +80,7 @@ export default function RevoCorpPage() {
     <div className="flex flex-col min-h-screen">
       {/* Return to Catalog bar */}
       <div className="bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200/50 py-4">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <Link href="/ordinateurs" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">
             <ArrowLeft size={14} />
             Retour au Catalogue
@@ -90,7 +90,7 @@ export default function RevoCorpPage() {
 
       {/* Hero Header */}
       <section className="py-20 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <span className="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3.5 py-1.5 rounded-full w-max">
               Gamme Professionnelle
@@ -124,7 +124,7 @@ export default function RevoCorpPage() {
 
       {/* Product Catalog Grid */}
       <section className="py-24 bg-neutral-50 dark:bg-neutral-950 border-t border-neutral-200/50 dark:border-neutral-800/50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display font-extrabold text-3xl md:text-4xl uppercase mb-4 text-black dark:text-white">
               Découvrez nos équipements professionnels

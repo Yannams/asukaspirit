@@ -7,7 +7,7 @@ export default function RevoFreePage() {
     <div className="flex flex-col min-h-screen">
       {/* Return to Catalog bar */}
       <div className="bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200/50 py-4">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <Link href="/ordinateurs" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">
             <ArrowLeft size={14} />
             Retour au Catalogue
@@ -17,7 +17,7 @@ export default function RevoFreePage() {
 
       {/* Hero Header */}
       <section className="py-20 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3.5 py-1.5 rounded-full w-max">
               Gamme Grand Public
@@ -36,12 +36,11 @@ export default function RevoFreePage() {
             </div>
           </div>
 
-          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 shadow-lg">
-            <FigmaImage
-              nodeId="268:1115"
+          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 dark:border-neutral-900 shadow-lg bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center p-6 h-80 select-none">
+            <img
+              src="/images/laptop_free.png"
               alt="Revo Free Concept"
-              fallbackType="laptop"
-              className="w-full h-80 object-cover"
+              className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>
@@ -49,7 +48,7 @@ export default function RevoFreePage() {
 
       {/* Models list */}
       <section className="py-24 bg-neutral-50 dark:bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-wider text-accent">FIFA & SHANGO</span>
             <h2 className="font-display font-extrabold text-3xl md:text-4xl uppercase mt-2 mb-4">
@@ -70,12 +69,11 @@ export default function RevoFreePage() {
                   Notre modèle « pro » est doté d’un Intel Core i7 (13ᵉ génération), de 16 Go de RAM et d’un SSD de 1 To, parfait pour les utilisateurs exigeants.
                 </p>
               </div>
-              <div className="mb-6 rounded-2xl overflow-hidden">
-                <FigmaImage
-                  nodeId="277:1227"
+              <div className="mb-6 rounded-2xl overflow-hidden bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-4 h-48 select-none">
+                <img
+                  src="/images/laptop_free.png"
                   alt="Revo Free Shango"
-                  fallbackType="laptop"
-                  className="h-48 w-full"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <Link
@@ -96,12 +94,11 @@ export default function RevoFreePage() {
                   Ce modèle « light » embarque un processeur Intel Celeron, 4 Go de RAM et un SSD de 512 Go, idéal pour les tâches du quotidien.
                 </p>
               </div>
-              <div className="mb-6 rounded-2xl overflow-hidden">
-                <FigmaImage
-                  nodeId="304:1396"
+              <div className="mb-6 rounded-2xl overflow-hidden bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-4 h-48 select-none">
+                <img
+                  src="/images/laptop_free.png"
                   alt="Revo Free FIFA"
-                  fallbackType="laptop"
-                  className="h-48 w-full"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <Link

@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Asuka Spirit | La Technologie Africaine Conçue pour Tous",
   description: "Ordinateurs, lunettes connectées, montres connectées, services et solutions pensés pour l'Afrique, fabriqués pour durer par AS World Tech.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

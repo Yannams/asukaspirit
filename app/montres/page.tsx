@@ -7,7 +7,7 @@ export default function MontresPage() {
     <div className="flex flex-col min-h-screen">
       {/* Return to home */}
       <div className="bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200/50 py-4">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <Link href="/" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">
             <ArrowLeft size={14} />
             Retour à l'Accueil
@@ -17,7 +17,7 @@ export default function MontresPage() {
 
       {/* Hero Section */}
       <section className="py-20 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <span className="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3.5 py-1.5 rounded-full w-max">
               Wearables & Objets Connectés
@@ -43,7 +43,7 @@ export default function MontresPage() {
 
       {/* Watch models */}
       <section className="py-24 bg-neutral-50 dark:bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display font-extrabold text-3xl md:text-4xl uppercase mb-4 text-black dark:text-white">
               Trois styles pour votre quotidien
@@ -53,7 +53,7 @@ export default function MontresPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[1171px] mx-auto">
             {/* Model 1: AS Watch 1 - Sport Dynamique */}
             <div className="bg-white dark:bg-neutral-900 border border-neutral-200/50 dark:border-neutral-800/50 rounded-3xl p-8 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div>
@@ -146,7 +146,7 @@ export default function MontresPage() {
 
       {/* Health Features */}
       <section className="py-24 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display font-extrabold text-3xl md:text-4xl uppercase mb-4">
               Fonctionnalités Santé & Sport

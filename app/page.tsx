@@ -1,484 +1,589 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Play, Cpu, ShieldCheck, Truck, Headphones, Users, Award, Zap } from "lucide-react";
-import FigmaImage from "../components/FigmaImage";
+import { ArrowUpRight, Play, Cpu, ShieldCheck, Package, Headphones, Users, Award } from "lucide-react";
+import HeroVideoSection from "@/components/HeroVideoSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Section */}
-      <section className="relative pt-20 pb-28 overflow-hidden bg-white dark:bg-black">
-        {/* Cercles décoratifs d'arrière-plan */}
-        <div className="absolute top-1/4 left-1/12 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl -z-10 animate-pulse" />
-        <div className="absolute top-1/3 right-1/12 w-[500px] h-[500px] rounded-full bg-accent/5 blur-3xl -z-10 animate-pulse" style={{ animationDelay: '2s' }} />
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* 1. Hero Section — Text only */}
+      <section className="relative pt-16 pb-12 overflow-hidden bg-white">
+        {/* Concentric rings background decoration matching Figma */}
+        <div className="absolute inset-0 overflow-hidden -z-10 flex items-center justify-center">
+          <svg width="100%" height="100%" className="absolute opacity-[0.04] text-black" style={{ transform: "scale(1.3)" }}>
+            <circle cx="50%" cy="40%" r="150" fill="none" stroke="currentColor" strokeWidth="1" />
+            <circle cx="50%" cy="40%" r="250" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" />
+            <circle cx="50%" cy="40%" r="350" fill="none" stroke="currentColor" strokeWidth="1" />
+            <circle cx="50%" cy="40%" r="450" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="10,5" />
+            <circle cx="50%" cy="40%" r="550" fill="none" stroke="currentColor" strokeWidth="1" />
+            <circle cx="50%" cy="40%" r="650" fill="none" stroke="currentColor" strokeWidth="1" />
+          </svg>
+        </div>
 
-        <div className="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
-          {/* Badge ASUKA SPIRIT */}
-          <div className="inline-flex items-center gap-2 bg-[#E9E9E9] text-[#222222] dark:bg-neutral-800 dark:text-neutral-200 text-sm font-medium py-1.5 px-6 rounded-full mb-6">
+        <div className="max-w-[1171px] mx-auto px-6 text-center flex flex-col items-center">
+          {/* Badge DECOUVRIR LA MARQUE */}
+          <div className="inline-flex items-center justify-center bg-[#F1F1F1] text-[#222222] text-base font-normal leading-none py-1.5 px-[18px] rounded-full mb-8 gap-2 w-[149px] h-8 uppercase">
             ASUKA SPIRIT
           </div>
 
-          {/* Badge Brillons ensemble */}
-          <div className="inline-flex items-center gap-2 bg-black text-white dark:bg-white dark:text-black text-[12px] font-semibold py-1 px-4 rounded-full mb-8 shadow-sm">
-            <span className="w-4 h-4 bg-primary rounded-full flex items-center justify-center text-white text-[8px]">
-              ★
-            </span>
-            Brillons ensemble
-          </div>
-
-          {/* Titre principal exact Figma */}
-          <h1 className="font-display font-light text-[40px] md:text-[85px] leading-tight tracking-tight text-black dark:text-white uppercase max-w-5xl mx-auto mb-8 text-center">
+          {/* Headline */}
+          <h1 className="font-display text-[38px] sm:text-[55px] md:text-[85px] leading-[1.15] tracking-tight text-black uppercase max-w-5xl mx-auto mb-8 text-center font-normal">
             La marque <br />
-            <span className="font-extrabold text-primary">Africaine n°1</span> <br />
+            <span className="font-bold text-primary">Africaine n°1</span> <br />
             des équipements !
           </h1>
 
-          {/* Description exacte Figma */}
-          <p className="text-[#848484] text-sm md:text-[18px] max-w-2xl mx-auto mb-12 leading-relaxed">
-            Ordinateurs, lunettes connectées, montres connectées, <br className="hidden md:inline" />
+          {/* Subtitle */}
+          <p className="text-[#848484] text-[18px] font-normal leading-[26px] max-w-[620px] mx-auto mb-10 text-center">
+            Ordinateurs, lunettes connectés, montres connectées ,<br />
             services & solutions pensés pour l'Afrique, fabriqués pour durer.
           </p>
 
-          {/* Widget de bouton premium exact Figma */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link href="/ordinateurs" className="group flex items-center h-[58px]">
-              <div className="bg-black text-white dark:bg-white dark:text-black px-8 h-full rounded-l-full flex items-center justify-center text-sm font-semibold tracking-wider transition-colors group-hover:bg-primary group-hover:text-white">
-                Découvrez nos produits
-              </div>
-              <div className="bg-primary text-white w-[58px] h-full rounded-r-full flex items-center justify-center transition-transform group-hover:scale-105">
-                <ArrowUpRight size={20} />
+          {/* Button */}
+          <div className="flex justify-center">
+            <Link 
+              href="/ordinateurs" 
+              className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+            >
+              <span>Découvrez nos produits</span>
+              <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                <ArrowUpRight size={18} />
               </div>
             </Link>
-
-            <a
-              href="#solutions"
-              className="border border-neutral-300 dark:border-neutral-800 hover:border-black dark:hover:border-white px-8 py-[18px] rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 w-full sm:w-auto text-center"
-            >
-              En savoir plus
-            </a>
           </div>
         </div>
       </section>
 
-      {/* 2. Section Vidéo */}
-      <section className="py-16 bg-white dark:bg-black">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="relative group rounded-[32px] overflow-hidden shadow-2xl border border-neutral-200/50 dark:border-neutral-800/50 aspect-video bg-neutral-900 flex items-center justify-center">
-            <div className="absolute inset-0 bg-black/40 z-10" />
-            <FigmaImage
-              nodeId="122:355"
-              alt="Présentation Vidéo"
-              fallbackType="scene"
-              className="absolute inset-0 w-full h-full object-cover opacity-80"
-            />
-            <button className="z-20 w-20 h-20 rounded-full bg-primary hover:bg-primary/95 text-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
-              <Play size={28} className="fill-white translate-x-0.5" />
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* 1b. Hero Video — Scroll-driven animation */}
+      <HeroVideoSection />
 
-      {/* 3. Section Ordinateurs Highlights - REVO CORP (Light Section) */}
-      <section className="py-24 bg-[#FCFCFC] dark:bg-neutral-950 border-t border-neutral-100 dark:border-neutral-900">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header Revo Corp */}
-          <div className="text-center mb-16 flex flex-col items-center gap-3">
-            <span className="text-[12px] font-medium uppercase tracking-wider text-black dark:text-white bg-neutral-100 dark:bg-neutral-900 px-4 py-1 rounded-full">
+      {/* 2. Section Ordinateurs - GAMME REVO CORP */}
+      <section className="py-24 bg-[#FCFCFC] border-t border-neutral-100 relative overflow-hidden">
+        {/* Spade watermark behind image/text */}
+        <div className="absolute right-[5%] bottom-[5%] text-[#F2F2F2] pointer-events-none select-none text-[350px] font-bold leading-none -z-10">
+          ♠
+        </div>
+
+        <div className="max-w-[1171px] mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-16 flex flex-col items-center gap-2">
+            <span className="text-[12px] font-medium tracking-[6px] text-black mb-8">
               Nos Ordinateurs
             </span>
-            <span className="text-[18px] text-[#3E3E3E] dark:text-neutral-400">
+            <span className="text-[18px] font-normal leading-[26px] text-[#3E3E3E] uppercase tracking-wide">
               (Pro / Entreprise)
             </span>
-            <h2 className="font-display font-extrabold text-[40px] md:text-[50px] uppercase text-black dark:text-white tracking-tight">
+            <h2 className="font-display font-bold text-[32px] md:text-[50px] md:leading-[26px] uppercase text-black tracking-tight my-2">
               Gamme REVO CORP
             </h2>
-            <p className="text-[#848484] text-sm md:text-[15px] max-w-xl mx-auto">
-              Taillée pour les professionnels qui ne font pas de compromis.
+            <p className="text-[15px] font-normal leading-none text-black max-w-[462px] mx-auto text-center mt-2">
+              Taillée pour <span className="font-semibold text-primary">les professionnels</span> qui ne font pas de compromis.
             </p>
           </div>
 
-          {/* Body Revo Corp */}
+          {/* Body */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 flex flex-col gap-8">
-              <p className="font-display font-light text-[24px] md:text-[25px] leading-relaxed text-black dark:text-white text-justify">
-                Robustesse, performance et fiabilité la gamme REVO CORP est conçue pour les entreprises, les équipes exigeantes et les environnements intensifs.
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <p className="font-display font-light text-[25px] leading-snug text-black text-left max-w-[459px]">
+                Robustesse, performance et fiabilité <span className="font-medium">la gamme REVO CORP</span> est conçue pour les entreprises, les équipes exigeantes et les environnements intensifs.
               </p>
               
-              <Link href="/ordinateurs/revo-corp" className="group flex items-center h-[58px] w-max">
-                <div className="bg-black text-white dark:bg-white dark:text-black px-6 h-full rounded-l-full flex items-center justify-center text-xs font-semibold tracking-wider uppercase transition-colors group-hover:bg-primary group-hover:text-white">
-                  Voir la gamme CORP
-                </div>
-                <div className="bg-primary text-white w-[58px] h-full rounded-r-full flex items-center justify-center transition-transform group-hover:scale-105">
+              <Link 
+                href="/ordinateurs/revo-corp" 
+                className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+              >
+                <span>Voir la gamme CORP</span>
+                <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
                   <ArrowUpRight size={18} />
                 </div>
               </Link>
             </div>
 
-            <div className="lg:col-span-7 rounded-[32px] overflow-hidden border border-neutral-200/50 dark:border-neutral-800/50 bg-white dark:bg-neutral-900 p-8 shadow-sm">
-              <FigmaImage
-                nodeId="245:724"
-                alt="Ordinateur Revo Corp"
-                fallbackType="laptop"
-                className="w-full h-[400px]"
-              />
+            <div className="lg:col-span-7 flex justify-center w-full">
+              {/* Image Container for REVO CORP Setup */}
+              <div className="relative w-full max-w-[620px] aspect-[4/3] flex items-center justify-center select-none">
+                {/* Grey Ace of Spades Watermark in the background */}
+                <img 
+                  src="/images/as_gris.svg" 
+                  alt="Asuka Spirit Spade Logo Background" 
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] object-contain opacity-[0.08] pointer-events-none select-none z-0"
+                />
+
+                {/* Back Monitor (All In One Back) */}
+                <div className="absolute top-[8%] right-0 w-[55%] aspect-square z-10 transition-all duration-500 hover:translate-y-[-8px] hover:scale-[1.02]">
+                  <img 
+                    src="/images/all_in_one_back.png" 
+                    alt="REVO CORP All-In-One Back View" 
+                    className="w-full h-full object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.06)]"
+                  />
+                </div>
+
+                {/* Front Monitor (All In One Front) */}
+                <div className="absolute bottom-[4%] left-0 w-[60%] aspect-[790/684] z-20 transition-all duration-500 hover:translate-y-[-8px] hover:scale-[1.02]">
+                  <img 
+                    src="/images/all_in_one_front.png" 
+                    alt="REVO CORP All-In-One Front View" 
+                    className="w-full h-full object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.12)]"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Section Ordinateurs Highlights - REVO FREE (Dark Section) */}
-      <section className="py-24 bg-black text-white border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header Revo Free */}
-          <div className="text-center mb-16 flex flex-col items-center gap-3">
-            <span className="text-[12px] font-medium uppercase tracking-wider text-white bg-white/10 px-4 py-1 rounded-full">
-              Nos Ordinateurs
-            </span>
-            <span className="text-[18px] text-primary">
+      {/* 3. Section Ordinateurs - GAMME REVO FREE */}
+      <section className="pt-24 pb-16 bg-[#141414] text-white relative overflow-visible">
+        <div className="max-w-[1171px] mx-auto px-6 relative z-10 w-full">
+          {/* Header */}
+          <div className="text-center mb-16 flex flex-col items-center gap-2">
+            <span className="text-[18px] font-normal leading-[26px] text-primary uppercase tracking-wide">
               (Grand public / Étudiant)
             </span>
-            <h2 className="font-display font-extrabold text-[40px] md:text-[50px] uppercase tracking-tight text-white">
+            <h2 className="font-display font-bold text-[32px] md:text-[50px] md:leading-[26px] uppercase tracking-tight text-white my-2">
               Gamme REVO FREE
             </h2>
-            <p className="text-white/60 text-sm md:text-[15px] max-w-xl mx-auto">
+            <p className="text-[15px] font-normal leading-none text-[#B5B5B5] max-w-[462px] mx-auto text-center mt-2">
               La liberté de travailler, apprendre et créer sans se ruiner.
             </p>
           </div>
 
-          {/* Body Revo Free */}
+          {/* Body */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 flex flex-col gap-8 lg:order-2">
-              <p className="font-display font-light text-[24px] md:text-[25px] leading-relaxed text-justify text-white/90">
-                Légère, accessible et puissante, la gamme REVO FREE accompagne les étudiants, créatifs et utilisateurs du quotidien partout où ils vont.
+            <div className="lg:col-span-5 flex flex-col gap-6 relative z-10">
+              <p className="font-display font-light text-[25px] leading-snug text-left text-neutral-300 max-w-[311px]">
+                Légère, accessible et puissante, <span className="font-medium">la gamme REVO FREE</span> accompagne les étudiants, créatifs et utilisateurs du quotidien partout où ils vont.
               </p>
               
-              <Link href="/ordinateurs/revo-free" className="group flex items-center h-[58px] w-max">
-                <div className="bg-white text-black px-6 h-full rounded-l-full flex items-center justify-center text-xs font-semibold tracking-wider uppercase transition-colors group-hover:bg-primary group-hover:text-white">
-                  Voir la gamme FREE
-                </div>
-                <div className="bg-primary text-white w-[58px] h-full rounded-r-full flex items-center justify-center transition-transform group-hover:scale-105">
+              <Link 
+                href="/ordinateurs/revo-free" 
+                className="inline-flex items-center justify-between bg-white hover:bg-neutral-100 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+              >
+                <span>Voir la gamme FREE</span>
+                <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
                   <ArrowUpRight size={18} />
                 </div>
               </Link>
             </div>
 
-            <div className="lg:col-span-7 lg:order-1 rounded-[32px] overflow-hidden border border-white/10 bg-neutral-900 p-8 shadow-inner">
-              <FigmaImage
-                nodeId="268:1115"
-                alt="Ordinateur Revo Free"
-                fallbackType="laptop"
-                className="w-full h-[400px]"
+            {/* Spacer column — the image is positioned absolutely to the section */}
+            <div className="lg:col-span-7 h-[250px] md:h-[350px] lg:h-[450px] pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Laptop image flush to right edge, bottom overflows out of section */}
+        <img 
+          src="/images/laptop_free.png" 
+          alt="REVO FREE Laptop" 
+          className="absolute right-0 top-[15%] lg:top-[-25%] h-[110%] md:h-[140%] lg:h-[170%] w-auto max-w-none object-contain select-none pointer-events-none z-0"
+        />
+      </section>
+      {/* 4. Section Wearables (Lunettes & Montres Connectées Side-by-Side) */}
+      <section id="wearables" className="py-24 bg-white scroll-mt-[64px] overflow-hidden">
+        {/* Title Container */}
+        <div className="max-w-[1171px] mx-auto px-6">
+          {/* Section title matching Figma */}
+          <div className="text-center mb-16">
+            <h2 className="font-display font-medium text-[12px] tracking-[6px] text-black uppercase">
+              Wearables & Smart Devices
+            </h2>
+          </div>
+        </div>
+
+        {/* Cards Container - Full Viewport Width */}
+        <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {/* Left Card: Lunettes Connectées (Light/White background matching Figma) */}
+            <div className="bg-white border-y border-neutral-100 p-8 md:p-12 lg:p-24 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              
+              <div className="flex flex-col gap-6 w-full relative z-10">
+                {/* 1. Title Container */}
+                <div className="max-w-[500px] w-full mx-auto flex flex-col items-center text-center gap-4">
+                  <span className="text-[18px] font-normal text-neutral-500 uppercase">
+                    (Smart Eyewear)
+                  </span>
+                  <h3 className="font-display font-bold text-[32px] md:text-[40px] uppercase text-black leading-tight md:whitespace-nowrap md:leading-[26px]">
+                    Lunettes Connectées
+                  </h3>
+                  <p className="text-[17px] font-normal text-black md:whitespace-nowrap">
+                    Vois le monde autrement. <span className="text-primary font-semibold">Connecté,</span> en permanence.
+                  </p>
+                </div>
+                
+                {/* 2. Glasses Image Container (spans full width/negative margin to touch left edge) */}
+                <div className="relative w-[calc(100%+4rem)] md:w-[calc(100%+6rem)] lg:w-[calc(100%+12rem)] h-[300px] md:h-[360px] lg:h-[420px] flex items-center justify-start my-8 lg:my-16 select-none -ml-8 md:-ml-12 lg:-ml-24 z-10">
+                  {/* Black spade watermark - centered behind the glasses, no text overlap */}
+                  <img 
+                    src="/images/as_noir.svg" 
+                    alt="" 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] h-[75%] md:h-[80%] lg:h-[85%] w-auto pointer-events-none z-0 scale-[1.3] lg:scale-[1.5] origin-center"
+                  />
+                  {/* Glasses image - enlarged, touching the left border */}
+                  <img 
+                    src="/images/shaka.png" 
+                    alt="Lunettes Connectées ASUKA" 
+                    className="relative w-auto h-[90%] md:h-[95%] lg:h-[100%] object-contain drop-shadow-2xl z-10 scale-[1.3] lg:scale-[1.5] origin-left"
+                  />
+                </div>
+
+                {/* 3. Description Container */}
+                <div className="max-w-[500px] w-full mx-auto mt-6 lg:mt-10">
+                  <p className="font-display font-light text-[20px] leading-[26px] text-justify text-neutral-700 max-w-[459px] mx-auto">
+                    Les lunettes connectées ASUKA fusionnent <span className="font-medium">style africain</span> contemporain et technologie embarquée : notifications, audio, photos, vidéos, IA, navigation. Tout dans votre regard.
+                  </p>
+                </div>
+              </div>
+
+              {/* 4. Button Container */}
+              <div className="flex justify-center max-w-[500px] w-full mx-auto mt-8 relative z-10">
+                <Link 
+                  href="#contact" 
+                  className="inline-flex items-center justify-between bg-black hover:bg-neutral-900 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                >
+                  <span>Découvrir nos lunettes</span>
+                  <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                    <ArrowUpRight size={18} />
+                  </div>
+                </Link>
+              </div>
+
+            </div>
+
+            {/* Right Card: Montres Connectées (Lighter dark) */}
+            <div className="bg-[#2D2D2D] text-white p-8 md:p-12 lg:p-24 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              <div className="max-w-[500px] w-full mx-auto flex flex-col justify-between h-full gap-8">
+                <div className="flex flex-col gap-6">
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <span className="text-[18px] font-normal text-[#B5B5B5] uppercase">
+                      (Smart Watch)
+                    </span>
+                    <h3 className="font-display font-bold text-[32px] md:text-[40px] uppercase text-white leading-tight md:whitespace-nowrap md:leading-[26px]">
+                      Montres Connectées
+                    </h3>
+                    <p className="text-[17px] font-normal text-white md:whitespace-nowrap">
+                      <span className="text-primary font-semibold">Votre vie au poignet.</span> Santé, temps, connexion.
+                    </p>
+                  </div>
+                  
+                  {/* Watch Image with as_blanc spade behind */}
+                  <div className="relative w-full h-[300px] md:h-[360px] lg:h-[420px] flex items-center justify-center my-8 lg:my-16 select-none z-10">
+                    {/* White spade watermark behind the watch */}
+                    <img 
+                      src="/images/as_blanc.svg" 
+                      alt="" 
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] h-[75%] md:h-[80%] lg:h-[85%] w-auto opacity-100 pointer-events-none z-0 scale-[1.3] lg:scale-[1.5] origin-center"
+                    />
+                    {/* Watch image */}
+                    <img 
+                      src="/images/montre.png" 
+                      alt="Montre Connectée ASUKA" 
+                      className="relative w-auto h-[90%] md:h-[95%] lg:h-[100%] object-contain drop-shadow-2xl z-10 scale-[1.3] lg:scale-[1.5] origin-center"
+                    />
+                  </div>
+
+                  <p className="font-display font-medium text-[20px] leading-[26px] text-justify text-white max-w-[459px] mx-auto mt-6 lg:mt-10">
+                    Conçue pour l'Africain actif : suivi santé, alertes intelligentes, autonomie longue durée. Une montre qui travaille autant que vous.
+                  </p>
+                </div>
+
+                <div className="flex justify-center">
+                  <Link 
+                    href="/montres" 
+                    className="inline-flex items-center justify-between bg-white hover:bg-neutral-100 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                  >
+                    <span>Découvrir nos montres</span>
+                    <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                      <ArrowUpRight size={18} />
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Section Dr ASUKA (Redesigned with WHITE background to match design) */}
+      <section className="py-24 bg-white text-black border-t border-neutral-100">
+        <div className="max-w-[1171px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+            {/* Left side text */}
+            <div className="lg:col-span-6 flex flex-col gap-6 justify-center">
+              {/* Dr. ASUKA custom logo */}
+              <div className="w-full max-w-[458px] overflow-visible">
+                <img 
+                  src="/images/Dr_ASUKA.png" 
+                  alt="Dr. ASUKA" 
+                  className="w-full aspect-square object-contain -ml-[19%] -mt-[15%] -mb-[22%]"
+                />
+              </div>
+              
+              <p className="font-display font-light text-[23px] leading-[32px] text-justify text-black max-w-[377px]">
+                <span className="font-bold">Dr ASUKA</span> est une marque déposée de <span className="font-bold">AS WORLD TECH</span>, ayant pour mission d'apporter un professionnalisme aux standards internationaux dans le secteur de la réparation et de la maintenance des équipements électroniques.
+              </p>
+
+              <div className="mt-4">
+                <Link 
+                  href="#contact" 
+                  className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                >
+                  <span>En savoir plus</span>
+                  <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                    <ArrowUpRight size={18} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right side exploded view image */}
+            <div className="lg:col-span-6 flex items-center justify-center h-[400px] lg:h-auto w-full">
+              <img 
+                src="/images/pc_bureau_exploded.png" 
+                alt="Dr. ASUKA Atelier / PC Démonté" 
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Section Wearables (Asymmetric Side-by-Side) */}
-      <section className="py-24 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 flex flex-col items-center">
-            <span className="text-[12px] font-medium uppercase tracking-wider text-black dark:text-white bg-neutral-100 dark:bg-neutral-900 px-4 py-1 rounded-full mb-4">
-              Wearables & Smart Devices
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column: Lunettes (Light card layout) */}
-            <div className="bg-[#FCFCFC] dark:bg-neutral-950 border border-neutral-200/50 dark:border-neutral-800/50 rounded-[32px] p-8 md:p-12 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2 text-center md:text-left">
-                  <span className="text-[18px] text-[#3E3E3E] dark:text-neutral-400">
-                    (Smart Eyewear)
-                  </span>
-                  <h3 className="font-display font-extrabold text-[36px] md:text-[40px] uppercase text-black dark:text-white leading-tight">
-                    Lunettes Connectées
-                  </h3>
-                  <p className="text-sm font-medium text-black/80 dark:text-white/80">
-                    Vois le monde autrement. Connecté, en permanence.
-                  </p>
-                </div>
-                
-                <div className="rounded-2xl overflow-hidden my-6 border border-neutral-100 dark:border-neutral-900 bg-white dark:bg-neutral-900 p-4">
-                  <FigmaImage
-                    nodeId="122:438"
-                    alt="Lunettes Connectées"
-                    fallbackType="scene"
-                    className="w-full h-[280px]"
-                  />
-                </div>
-
-                <p className="font-display font-light text-[18px] md:text-[20px] leading-relaxed text-justify text-black dark:text-white/95">
-                  Les lunettes connectées ASUKA fusionnent style africain contemporain et technologie embarquée : notifications, audio, photos, vidéos, IA, navigation. Tout dans votre regard.
-                </p>
-              </div>
-
-              <Link href="#contact" className="group flex items-center h-[58px] mt-8 w-max mx-auto md:mx-0">
-                <div className="bg-black text-white dark:bg-white dark:text-black px-6 h-full rounded-l-full flex items-center justify-center text-xs font-semibold tracking-wider uppercase transition-colors group-hover:bg-primary group-hover:text-white">
-                  Découvrir nos lunettes
-                </div>
-                <div className="bg-primary text-white w-[58px] h-full rounded-r-full flex items-center justify-center transition-transform group-hover:scale-105">
-                  <ArrowUpRight size={18} />
-                </div>
-              </Link>
-            </div>
-
-            {/* Right Column: Montres (Dark card layout) */}
-            <div className="bg-black text-white border border-white/10 rounded-[32px] p-8 md:p-12 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2 text-center md:text-left">
-                  <span className="text-[18px] text-white/80">
-                    (Smart Watch)
-                  </span>
-                  <h3 className="font-display font-extrabold text-[36px] md:text-[40px] uppercase text-white leading-tight">
-                    Montres Connectées
-                  </h3>
-                  <p className="text-sm font-medium text-white/80">
-                    Votre vie au poignet. Santé, temps, connexion.
-                  </p>
-                </div>
-                
-                <div className="rounded-2xl overflow-hidden my-6 border border-white/5 bg-neutral-900 p-4">
-                  <FigmaImage
-                    nodeId="427:528"
-                    alt="Montres Connectées"
-                    fallbackType="watch"
-                    className="w-full h-[280px]"
-                  />
-                </div>
-
-                <p className="font-display font-light text-[18px] md:text-[20px] leading-relaxed text-justify text-white/90">
-                  Conçue pour l'Africain actif : suivi santé, alertes intelligentes, autonomie longue durée. Une montre qui travaille autant que vous.
-                </p>
-              </div>
-
-              <Link href="/montres" className="group flex items-center h-[58px] mt-8 w-max mx-auto md:mx-0">
-                <div className="bg-white text-black px-6 h-full rounded-l-full flex items-center justify-center text-xs font-semibold tracking-wider uppercase transition-colors group-hover:bg-primary group-hover:text-white">
-                  Découvrir nos montres
-                </div>
-                <div className="bg-primary text-white w-[58px] h-full rounded-r-full flex items-center justify-center transition-transform group-hover:scale-105">
-                  <ArrowUpRight size={18} />
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Section Dr ASUKA */}
-      <section className="py-24 bg-neutral-950 text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col gap-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">
-              Maintenance & Réparation Pro
-            </span>
-            <h2 className="font-display font-extrabold text-4xl md:text-5xl uppercase tracking-tight">
-              Dr ASUKA
-            </h2>
-            <p className="text-white/70 leading-relaxed text-sm md:text-base text-justify">
-              Dr ASUKA est une marque déposée de AS WORLD TECH, ayant pour mission d'apporter un professionnalisme aux standards internationaux dans le secteur de la réparation et de la maintenance des équipements électroniques.
-            </p>
-            <div className="flex mt-4">
-              <a
-                href="#contact"
-                className="bg-primary hover:bg-primary/80 text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
-              >
-                En savoir plus
-                <ArrowUpRight size={14} />
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-[32px] overflow-hidden shadow-2xl border border-white/10">
-            <FigmaImage
-              nodeId="122:496"
-              alt="Dr ASUKA Atelier"
-              fallbackType="scene"
-              className="w-full h-80 object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Section Solutions & Financement */}
-      <section id="solutions" className="py-24 bg-white dark:bg-black">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* 6. Section Solutions & Financement (AS Pay / Assuk Assur / Stats) */}
+      <section id="solutions" className="py-24 bg-[#FAFAFA] border-t border-neutral-100">
+        <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-display font-extrabold text-4xl md:text-5xl uppercase mb-4">
-              Nos Solutions & Services
+            <h2 className="font-display font-medium text-[12px] tracking-[6px] text-black">
+              Nos solutions
             </h2>
-            <p className="text-muted max-w-xl mx-auto">
-              Des innovations financières et de couverture pour démocratiser l'accès à la technologie.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {/* AS Pay */}
-            <div className="p-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/50 dark:border-neutral-800/50 rounded-3xl flex items-start gap-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <Cpu size={24} />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-xl uppercase mb-2">AS Pay</h3>
-                <p className="text-muted text-sm leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            {/* AS Pay (Dark card) */}
+            <div className="p-8 lg:p-10 bg-[#212121] text-white rounded-[50px] w-full lg:w-[417px] lg:h-[389px] flex flex-col justify-center items-center shadow-lg relative overflow-hidden mx-auto">
+              <div className="flex flex-col items-center text-center gap-6">
+                <img 
+                  src="/images/as pay.png" 
+                  alt="AS Pay" 
+                  className="w-[86px] h-[136.45px] object-contain"
+                />
+                <p className="font-display font-normal text-[14px] leading-relaxed text-justify text-white max-w-[307px] mx-auto">
                   AS Pay supprime la barrière du prix. Financement immédiat via votre banque, remboursement progressif la tech ASUKA est accessible à tous, tout de suite.
                 </p>
               </div>
             </div>
 
-            {/* Assuk Assur */}
-            <div className="p-8 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/50 dark:border-neutral-800/50 rounded-3xl flex items-start gap-6">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-xl uppercase mb-2">Assuk Assur</h3>
-                <p className="text-muted text-sm leading-relaxed">
+            {/* Assuk Assur (Light card) */}
+            <div className="p-8 lg:p-10 bg-[#FFFFFF] text-black border border-neutral-100 rounded-[50px] w-full lg:w-[417px] lg:h-[389px] flex flex-col justify-center items-center shadow-sm relative overflow-hidden mx-auto">
+              <div className="flex flex-col items-center text-center gap-6">
+                <img 
+                  src="/images/assuka_assur.png" 
+                  alt="Assuk Assur" 
+                  className="w-[157px] h-[129px] object-contain"
+                />
+                <p className="font-display font-normal text-[14px] leading-relaxed text-justify text-neutral-600 max-w-[307px] mx-auto">
                   En partenariat avec SUNU Assurances, Assuk Assur couvre casse, vol, dégâts et surtensions. Réparation ou remplacement rapide tu investis une fois, on protège pour longtemps.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Section Chiffres (Figma Statistics) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 bg-black border border-neutral-800 rounded-3xl p-8 md:p-10 shadow-xl">
+          {/* Section Chiffres (Single Horizontal Black statistics bar matching Figma design) */}
+          <div className="flex flex-col lg:flex-row items-center justify-between bg-[#212121] rounded-[50px] px-10 py-8 lg:py-0 lg:h-[136px] max-w-[1016px] w-full mx-auto gap-8 lg:gap-4 shadow-xl select-none">
             {/* Stat 1 */}
-            <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-primary shrink-0">
-                <Truck size={28} />
+            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+              <div className="text-white shrink-0">
+                <Package size={40} strokeWidth={1.5} />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display font-extrabold text-[40px] leading-tight text-primary">+120</span>
-                <span className="text-white text-xs leading-tight tracking-wide font-medium">Produits de qualité supérieure</span>
+              <div className="flex flex-col gap-[2px]">
+                <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">+120</span>
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                  Produits de qualité<br className="hidden sm:inline" /> supérieure
+                </span>
               </div>
             </div>
+
+            {/* Divider 1 */}
+            <div className="hidden lg:block h-[38px] w-[1px] bg-[#D9D9D9]/30 shrink-0" />
 
             {/* Stat 2 */}
-            <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-primary shrink-0">
-                <Users size={28} />
+            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+              <div className="text-white shrink-0">
+                <Users size={40} strokeWidth={1.5} />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display font-extrabold text-[40px] leading-tight text-primary">2.5M+</span>
-                <span className="text-white text-xs leading-tight tracking-wide font-medium">Clients satisfaits</span>
+              <div className="flex flex-col gap-[2px]">
+                <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">2.5M+</span>
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                  Clients satisfaits
+                </span>
               </div>
             </div>
+
+            {/* Divider 2 */}
+            <div className="hidden lg:block h-[38px] w-[1px] bg-[#D9D9D9]/30 shrink-0" />
 
             {/* Stat 3 */}
-            <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-primary shrink-0">
-                <Award size={28} />
+            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+              <div className="text-white shrink-0">
+                <Award size={40} strokeWidth={1.5} />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display font-extrabold text-[40px] leading-tight text-primary">98%</span>
-                <span className="text-white text-xs leading-tight tracking-wide font-medium">Taux de satisfaction</span>
+              <div className="flex flex-col gap-[2px]">
+                <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">98%</span>
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                  Taux de satisfaction
+                </span>
               </div>
             </div>
+
+            {/* Divider 3 */}
+            <div className="hidden lg:block h-[38px] w-[1px] bg-[#D9D9D9]/30 shrink-0" />
 
             {/* Stat 4 */}
-            <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-primary shrink-0">
-                <Headphones size={28} />
+            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+              <div className="text-white shrink-0">
+                <Headphones size={40} strokeWidth={1.5} />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display font-extrabold text-[40px] leading-tight text-primary">24/7</span>
-                <span className="text-white text-xs leading-tight tracking-wide font-medium">Assistance d'expert</span>
+              <div className="flex flex-col gap-[2px]">
+                <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">24/7</span>
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                  Assistance d'expert
+                </span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. Section Ils Confiance */}
-      <section className="py-20 bg-[#FCFCFC] dark:bg-neutral-950 border-y border-neutral-100 dark:border-neutral-900">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h3 className="font-display font-bold text-xs uppercase tracking-widest text-primary mb-8">
+      {/* 7. Section Ils Nous Font Confiance (Logos) */}
+      <section className="py-16 bg-[#FAFAFA] border-y border-neutral-100">
+        <div className="max-w-[1171px] mx-auto px-6 text-center">
+          <h3 className="font-sans font-medium text-[12px] leading-none uppercase tracking-[0.5em] text-black mb-8">
             ILS NOUS FONT CONFIANCE
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
-            <span className="font-display font-extrabold text-2xl uppercase tracking-wider text-black dark:text-white">Revo Corp</span>
-            <span className="font-display font-extrabold text-2xl uppercase tracking-wider text-black dark:text-white">AS WORLD</span>
-            <span className="font-display font-extrabold text-2xl uppercase tracking-wider text-black dark:text-white">Dr ASUKA</span>
-            <span className="font-display font-extrabold text-2xl uppercase tracking-wider text-black dark:text-white">Assuk Assur</span>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 transition-all duration-300">
+            <img src="/images/ministere.png" alt="Ministère" className="h-12 md:h-14 w-auto object-contain" />
+            <img src="/images/lnb.png" alt="LNB" className="h-10 md:h-12 w-auto object-contain" />
+            <img src="/images/cma.png" alt="CMA" className="h-10 md:h-12 w-auto object-contain" />
+            <img src="/images/asin.png" alt="ASIN" className="h-10 md:h-12 w-auto object-contain" />
+            <img src="/images/ccib.png" alt="CCIB" className="h-10 md:h-12 w-auto object-contain" />
           </div>
         </div>
       </section>
 
-      {/* 8. Contact Form Section */}
-      <section id="contact" className="py-24 bg-white dark:bg-black">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-display font-extrabold text-4xl md:text-5xl uppercase mb-4 text-black dark:text-white">
-              Envoyez-nous un message
+      {/* 8. Contact Form Section (Exploded view: Form on left, Athlete image placeholder on right inside same card) */}
+      <section id="contact" className="py-24 bg-white">
+        <div className="max-w-[1171px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-sans font-medium text-[12px] leading-none uppercase tracking-[0.5em] text-black">
+              NOUS CONTACTER
             </h2>
-            <p className="text-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-              Avez-vous une question ? Une plainte ? Ou avez-vous besoin d'aide pour choisir le bon produit chez Zalomi. N'hésitez pas à nous contacter
-            </p>
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-6 max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Nom <span className="text-primary">*</span></label>
-                <input
-                  type="text"
-                  placeholder="Votre nom..."
-                  className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary w-full text-black dark:text-white"
-                  required
-                />
+          <div className="relative max-w-[882px] mx-auto w-full">
+            {/* Rectangle 42: Contact Card */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[50px] overflow-hidden shadow-2xl bg-[#212121] lg:h-[651px] relative">
+              {/* Left Column: Form */}
+              <div className="text-white p-8 md:p-12 lg:pl-[83px] lg:pt-[62px] lg:pb-[86px] lg:pr-6 lg:col-span-7 flex flex-col justify-between h-full z-10">
+                <div className="mb-6">
+                  <h2 className="font-sans font-semibold text-[22px] sm:text-[25px] leading-none uppercase mb-4 text-white">
+                    Envoyez-nous un message
+                  </h2>
+                  <p className="text-[#B1B1B1] text-[13px] leading-[1.4] font-normal max-w-[396px]">
+                    Avez-vous une question ? Une plainte ? Ou avez-vous besoin d'aide pour choisir le bon produit chez Asuka Spirit. N'hésitez pas à nous contacter
+                  </p>
+                </div>
+
+                <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Nom <span className="text-primary">*</span></label>
+                      <input
+                        type="text"
+                        placeholder="Votre nom..."
+                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        required
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Prénom <span className="text-primary">*</span></label>
+                      <input
+                        type="text"
+                        placeholder="Votre prénom..."
+                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Email <span className="text-primary">*</span></label>
+                      <input
+                        type="email"
+                        placeholder="Votre adresse email..."
+                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        required
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Téléphone <span className="text-primary">*</span></label>
+                      <input
+                        type="tel"
+                        placeholder="Votre numéro..."
+                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Message <span className="text-primary">*</span></label>
+                    <textarea
+                      placeholder="Votre message..."
+                      rows={3}
+                      className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                      required
+                    />
+                  </div>
+
+                  <div className="flex justify-end pt-2">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-between bg-white hover:bg-neutral-100 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                    >
+                      <span>Envoyez le message</span>
+                      <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                        <ArrowUpRight size={18} />
+                      </div>
+                    </button>
+                  </div>
+                </form>
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Prénom <span className="text-primary">*</span></label>
-                <input
-                  type="text"
-                  placeholder="Votre prénom..."
-                  className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary w-full text-black dark:text-white"
-                  required
+
+              {/* Right Column: Empty on desktop to make room for absolute athlete, handles image on mobile */}
+              <div className="lg:col-span-5 relative min-h-[350px] lg:min-h-0 overflow-hidden lg:overflow-visible">
+                <img 
+                  src="/images/athl_te_masculin_africain_en_pleine_202606171626_1_512_719.png" 
+                  alt="Athlète Africain"
+                  className="absolute inset-0 w-full h-full object-cover lg:hidden"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Email <span className="text-primary">*</span></label>
-                <input
-                  type="email"
-                  placeholder="Votre adresse email..."
-                  className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary w-full text-black dark:text-white"
-                  required
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Téléphone <span className="text-primary">*</span></label>
-                <input
-                  type="tel"
-                  placeholder="0158479682..."
-                  className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary w-full text-black dark:text-white"
-                  required
-                />
-              </div>
-            </div>
-            
-            <div className="flex flex-col gap-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Message <span className="text-primary">*</span></label>
-              <textarea
-                placeholder="Votre message..."
-                rows={5}
-                className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary w-full text-black dark:text-white"
-                required
+            {/* Desktop Exploding Athlete Image */}
+            <div className="hidden lg:block absolute z-20 pointer-events-none select-none"
+                 style={{
+                   left: "555px",
+                   top: "60px",
+                   width: "830px",
+                   height: "770px"
+                 }}>
+              <img 
+                src="/images/athl_te_masculin_africain_en_pleine_202606171626_1_512_719.png" 
+                alt="Athlète Africain"
+                className="w-full h-full object-contain"
               />
             </div>
-
-            <div className="flex justify-end pt-4">
-              <button
-                type="submit"
-                className="bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-8 rounded-full uppercase text-xs tracking-wider transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
-              >
-                Envoyez le message
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
       </section>
     </div>
