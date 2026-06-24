@@ -138,6 +138,9 @@ export default function Home() {
         <div className="max-w-[1171px] mx-auto px-6 relative z-10 w-full">
           {/* Header */}
           <div className="text-center mb-16 flex flex-col items-center gap-2">
+            <span className="text-[12px] font-medium tracking-[6px] text-white/50 mb-8 uppercase">
+              Nos Ordinateurs
+            </span>
             <span className="text-[18px] font-normal leading-[26px] text-primary uppercase tracking-wide">
               (Grand public / Étudiant)
             </span>
@@ -180,7 +183,7 @@ export default function Home() {
         />
       </section>
       {/* 4. Section Wearables (Lunettes & Montres Connectées Side-by-Side) */}
-      <section id="wearables" className="py-24 bg-white scroll-mt-[64px] overflow-hidden">
+      <section id="wearables" className="pt-24 pb-0 bg-white scroll-mt-[80px] overflow-hidden">
         {/* Title Container */}
         <div className="max-w-[1171px] mx-auto px-6">
           {/* Section title matching Figma */}
@@ -194,8 +197,9 @@ export default function Home() {
         {/* Cards Container - Full Viewport Width */}
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Left Card: Lunettes Connectées (Light/White background matching Figma) */}
-            <div className="bg-white border-y border-neutral-100 p-8 md:p-12 lg:p-24 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            {/* Left Card: Lunettes Connectées — Rectangle 34 in Figma: #D9D9D9 @ 8% opacity */}
+            <div className="border-y border-neutral-100 p-8 md:p-12 lg:p-24 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden" style={{ backgroundColor: "rgba(217,217,217,0.08)" }}>
+
               
               <div className="flex flex-col gap-6 w-full relative z-10">
                 {/* 1. Title Container */}
@@ -213,12 +217,6 @@ export default function Home() {
                 
                 {/* 2. Glasses Image Container (spans full width/negative margin to touch left edge) */}
                 <div className="relative w-[calc(100%+4rem)] md:w-[calc(100%+6rem)] lg:w-[calc(100%+12rem)] h-[300px] md:h-[360px] lg:h-[420px] flex items-center justify-start my-8 lg:my-16 select-none -ml-8 md:-ml-12 lg:-ml-24 z-10">
-                  {/* Black spade watermark - centered behind the glasses, no text overlap */}
-                  <img 
-                    src="/images/as_noir.svg" 
-                    alt="" 
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] h-[75%] md:h-[80%] lg:h-[85%] w-auto pointer-events-none z-0 scale-[1.3] lg:scale-[1.5] origin-center"
-                  />
                   {/* Glasses image - enlarged, touching the left border */}
                   <img 
                     src="/images/shaka.png" 
@@ -268,12 +266,6 @@ export default function Home() {
                   
                   {/* Watch Image with as_blanc spade behind */}
                   <div className="relative w-full h-[300px] md:h-[360px] lg:h-[420px] flex items-center justify-center my-8 lg:my-16 select-none z-10">
-                    {/* White spade watermark behind the watch */}
-                    <img 
-                      src="/images/as_blanc.svg" 
-                      alt="" 
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] h-[75%] md:h-[80%] lg:h-[85%] w-auto opacity-100 pointer-events-none z-0 scale-[1.3] lg:scale-[1.5] origin-center"
-                    />
                     {/* Watch image */}
                     <img 
                       src="/images/montre.png" 
@@ -305,7 +297,7 @@ export default function Home() {
       </section>
 
       {/* 5. Section Dr ASUKA (Redesigned with WHITE background to match design) */}
-      <section className="py-24 bg-white text-black border-t border-neutral-100">
+      <section className="pt-0 pb-24 bg-white text-black">
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
             {/* Left side text */}
@@ -349,7 +341,7 @@ export default function Home() {
       </section>
 
       {/* 6. Section Solutions & Financement (AS Pay / Assuk Assur / Stats) */}
-      <section id="solutions" className="py-24 bg-[#FAFAFA] border-t border-neutral-100">
+      <section id="solutions" className="py-24 bg-[#FAFAFA] border-t border-neutral-100 scroll-mt-[80px]">
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display font-medium text-[12px] tracking-[6px] text-black">
@@ -388,7 +380,7 @@ export default function Home() {
           </div>
 
           {/* Section Chiffres (Single Horizontal Black statistics bar matching Figma design) */}
-          <div className="flex flex-col lg:flex-row items-center justify-between bg-[#212121] rounded-[50px] px-10 py-8 lg:py-0 lg:h-[136px] max-w-[1016px] w-full mx-auto gap-8 lg:gap-4 shadow-xl select-none">
+          <div className="flex flex-col lg:flex-row items-center justify-between bg-[#212121] rounded-[50px] px-10 py-8 lg:py-0 lg:h-[136px] max-w-[1171px] w-full gap-8 lg:gap-4 shadow-xl select-none">
             {/* Stat 1 */}
             <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
               <div className="text-white shrink-0">
@@ -470,17 +462,17 @@ export default function Home() {
       </section>
 
       {/* 8. Contact Form Section (Exploded view: Form on left, Athlete image placeholder on right inside same card) */}
-      <section id="contact" className="py-24 bg-white">
+      <section id="contact" className="py-24 bg-white scroll-mt-[160px]">
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-sans font-medium text-[12px] leading-none uppercase tracking-[0.5em] text-black">
-              NOUS CONTACTER
+            <h2 className="font-sans font-medium text-[12px] leading-none tracking-[0.5em] text-black">
+              Nous contactez
             </h2>
           </div>
 
-          <div className="relative max-w-[882px] mx-auto w-full">
+          <div className="relative max-w-[882px] w-full">
             {/* Rectangle 42: Contact Card */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[50px] overflow-hidden shadow-2xl bg-[#212121] lg:h-[651px] relative">
+            <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[50px] overflow-hidden shadow-2xl bg-[#212121] lg:h-[651px] relative w-full">
               {/* Left Column: Form */}
               <div className="text-white p-8 md:p-12 lg:pl-[83px] lg:pt-[62px] lg:pb-[86px] lg:pr-6 lg:col-span-7 flex flex-col justify-between h-full z-10">
                 <div className="mb-6">
@@ -492,14 +484,14 @@ export default function Home() {
                   </p>
                 </div>
 
-                <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+                 <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
                       <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Nom <span className="text-primary">*</span></label>
                       <input
                         type="text"
                         placeholder="Votre nom..."
-                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        className="bg-white border border-neutral-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-black placeholder:text-neutral-400"
                         required
                       />
                     </div>
@@ -508,7 +500,7 @@ export default function Home() {
                       <input
                         type="text"
                         placeholder="Votre prénom..."
-                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        className="bg-white border border-neutral-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-black placeholder:text-neutral-400"
                         required
                       />
                     </div>
@@ -520,7 +512,7 @@ export default function Home() {
                       <input
                         type="email"
                         placeholder="Votre adresse email..."
-                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        className="bg-white border border-neutral-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-black placeholder:text-neutral-400"
                         required
                       />
                     </div>
@@ -529,7 +521,7 @@ export default function Home() {
                       <input
                         type="tel"
                         placeholder="Votre numéro..."
-                        className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                        className="bg-white border border-neutral-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-black placeholder:text-neutral-400"
                         required
                       />
                     </div>
@@ -540,7 +532,7 @@ export default function Home() {
                     <textarea
                       placeholder="Votre message..."
                       rows={3}
-                      className="bg-[#1C1C1C] border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-white"
+                      className="bg-white border border-neutral-200 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-primary w-full text-black placeholder:text-neutral-400"
                       required
                     />
                   </div>
@@ -562,24 +554,42 @@ export default function Home() {
               {/* Right Column: Empty on desktop to make room for absolute athlete, handles image on mobile */}
               <div className="lg:col-span-5 relative min-h-[350px] lg:min-h-0 overflow-hidden lg:overflow-visible">
                 <img 
-                  src="/images/athl_te_masculin_africain_en_pleine_202606171626_1_512_719.png" 
-                  alt="Athlète Africain"
+                  src="/images/casque.png" 
+                  alt="Athlète avec Casque VR"
                   className="absolute inset-0 w-full h-full object-cover lg:hidden"
                 />
               </div>
             </div>
 
+            {/* Desktop Text "VOIR LA HIGH-TECH AUTREMENT" above head */}
+            <div className="hidden lg:flex flex-col items-center absolute z-30 text-center whitespace-nowrap"
+                 style={{
+                   left: "max(1123px, calc(50vw + 387.5px))",
+                   top: "-130px",
+                   transform: "translateX(-50%)"
+                 }}>
+              <span className="text-[#555555] font-sans font-medium text-[18px] tracking-[0.1em] uppercase">
+                Voir la
+              </span>
+              <span className="text-black font-sans font-extrabold text-[32px] leading-tight uppercase my-0.5">
+                High-Tech
+              </span>
+              <span className="text-[#555555] font-sans font-medium text-[18px] tracking-[0.1em] uppercase">
+                autrement
+              </span>
+            </div>
+
             {/* Desktop Exploding Athlete Image */}
             <div className="hidden lg:block absolute z-20 pointer-events-none select-none"
                  style={{
-                   left: "555px",
-                   top: "60px",
-                   width: "830px",
-                   height: "770px"
+                   left: "max(320px, calc(50vw - 415.5px))",
+                   top: "-30px",
+                   width: "1000px",
+                   height: "930px"
                  }}>
               <img 
-                src="/images/athl_te_masculin_africain_en_pleine_202606171626_1_512_719.png" 
-                alt="Athlète Africain"
+                src="/images/casque.png" 
+                alt="Athlète avec Casque VR"
                 className="w-full h-full object-contain"
               />
             </div>
