@@ -5,8 +5,9 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121212] py-16 px-4 md:px-8 border-t border-neutral-900 select-none">
-      <div className="bg-white text-black rounded-[40px] p-8 md:p-12 max-w-[1171px] mx-auto w-full flex flex-col lg:flex-row justify-between items-stretch gap-12 border border-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+    <footer className="relative z-30 py-16 px-4 md:px-8 select-none bg-[#121212] border-t border-neutral-900">
+      {/* Footer content card */}
+      <div className="relative z-30 bg-white text-black rounded-[40px] p-8 md:p-12 max-w-[1171px] mx-auto w-full flex flex-col lg:flex-row justify-between items-stretch gap-12 border border-neutral-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
         {/* Left Column: Logo, Description & General Links */}
         <div className="flex flex-col justify-between items-start gap-8 lg:w-[45%]">
           {/* Logo Section */}

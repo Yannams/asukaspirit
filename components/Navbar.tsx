@@ -37,14 +37,18 @@ export default function Navbar() {
         boxShadow: "0px 1px 13px 0px rgba(0, 0, 0, 0.25)"
       }}
     >
-      <div className="max-w-[1171px] mx-auto w-full px-6 flex justify-between items-center h-[31px]">
+      <div className="max-w-[1171px] mx-auto w-full px-6 flex justify-between items-center h-[31px] relative">
         {/* Logo */}
         <Link href="/" className="flex items-center select-none text-black">
           <img src="/logo.svg" alt="Asuka Spirit" className="h-[31px] w-auto" />
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-[15px]">
+        {/* Desktop Links centered absolute */}
+        <div className="hidden md:flex items-center gap-[25px] absolute"
+             style={{
+               left: "50%",
+               transform: "translateX(-50%)"
+             }}>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -61,7 +65,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* French flag indicator */}
+        {/* French flag indicator on the right */}
         <div className="hidden md:flex items-center">
           <img
             src="/images/ellipse_1_I478_1177;78_50.png"
