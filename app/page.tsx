@@ -7,8 +7,8 @@ import HeroVideoSection from "@/components/HeroVideoSection";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* 1. Hero Section — Text only */}
-      <section className="relative pt-16 pb-12 overflow-hidden bg-white">
+      {/* 1. Hero Section */}
+      <section className="relative pt-8 md:pt-12 pb-8 lg:pb-12 overflow-hidden bg-white">
         {/* Concentric rings background decoration matching Figma */}
         <div className="absolute inset-0 overflow-hidden -z-10 flex items-center justify-center">
           <svg width="100%" height="100%" className="absolute opacity-[0.04] text-black" style={{ transform: "scale(1.3)" }}>
@@ -21,36 +21,50 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="max-w-[1171px] mx-auto px-6 text-center flex flex-col items-center">
-          {/* Badge DECOUVRIR LA MARQUE */}
-          <div className="inline-flex items-center justify-center bg-[#F1F1F1] text-[#222222] text-base font-normal leading-none py-1.5 px-[18px] rounded-full mb-8 gap-2 w-[149px] h-8 uppercase">
-            ASUKA SPIRIT
-          </div>
-
-          {/* Headline */}
-          <h1 className="font-display text-[38px] sm:text-[55px] md:text-[85px] leading-[1.15] tracking-tight text-black uppercase max-w-5xl mx-auto mb-8 text-center font-normal">
-            La marque <br />
-            <span className="font-bold text-primary">Africaine n°1</span> <br />
-            des équipements !
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-[#848484] text-[18px] font-normal leading-[26px] max-w-[620px] mx-auto mb-10 text-center">
-            Ordinateurs, lunettes connectés, montres connectées ,<br />
-            services & solutions pensés pour l'Afrique, fabriqués pour durer.
-          </p>
-
-          {/* Button */}
-          <div className="flex justify-center">
-            <Link 
-              href="/ordinateurs" 
-              className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
-            >
-              <span>Découvrez nos produits</span>
-              <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
-                <ArrowUpRight size={18} />
+        <div className="max-w-[1171px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+            {/* Left Column: Text Content */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
+              {/* Badge */}
+              <div className="inline-flex items-center justify-center bg-[#EBEBEB] text-[#555555] text-xs font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full mb-6">
+                ASUKA SPIRIT
               </div>
-            </Link>
+
+              {/* Headline */}
+              <h1 className="font-display font-normal text-[38px] sm:text-[55px] lg:text-[70px] xl:text-[80px] leading-[1.1] tracking-tight text-black uppercase mb-6 text-left">
+                La marque <br />
+                <span className="font-bold text-primary">Africaine n°1</span> <br />
+                des équipements !
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-[#888888] text-[15px] sm:text-[17px] font-normal leading-[26px] max-w-xl mb-8 text-left">
+                Ordinateurs, lunettes connectés, montres connectées ,<br className="hidden sm:inline" />
+                services & solutions pensés pour l'Afrique, fabriqués pour durer.
+              </p>
+
+              {/* Button */}
+              <div className="flex justify-start w-full">
+                <Link 
+                  href="/ordinateurs" 
+                  className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                >
+                  <span>Découvrez nos produits</span>
+                  <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                    <ArrowUpRight size={18} />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="lg:col-span-5 relative flex items-end justify-center lg:justify-end h-[380px] sm:h-[480px] lg:h-[540px] w-full select-none">
+              <img 
+                src="/images/casque.png" 
+                alt="Lunettes Connectées ASUKA" 
+                className="w-full h-full object-contain lg:object-right-bottom scale-[1.1] lg:scale-[1.2] origin-bottom-right drop-shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -59,7 +73,7 @@ export default function Home() {
       <HeroVideoSection />
 
       {/* 2. Section Ordinateurs - GAMME REVO CORP */}
-      <section className="py-24 bg-[#FCFCFC] border-t border-neutral-100 relative overflow-hidden">
+      <section className="py-16 bg-[#FCFCFC] border-t border-neutral-100 relative overflow-hidden">
         {/* Spade watermark behind image/text */}
         <div className="absolute right-[5%] bottom-[5%] text-[#F2F2F2] pointer-events-none select-none text-[350px] font-bold leading-none -z-10">
           ♠
@@ -134,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* 3. Section Ordinateurs - GAMME REVO FREE */}
-      <section className="pt-24 pb-16 bg-[#141414] text-white relative overflow-visible">
+      <section className="pt-16 pb-10 bg-[#141414] text-white relative overflow-visible">
         <div className="max-w-[1171px] mx-auto px-6 relative z-10 w-full">
           {/* Header */}
           <div className="text-center mb-16 flex flex-col items-center gap-2">
@@ -183,113 +197,110 @@ export default function Home() {
         />
       </section>
       {/* 4. Section Wearables (Lunettes & Montres Connectées Side-by-Side) */}
-      <section id="wearables" className="pt-24 pb-0 bg-white scroll-mt-[80px] overflow-hidden">
-        {/* Title Container */}
+      <section id="wearables" className="py-12 md:py-16 bg-[#FAFAFA] scroll-mt-[80px] overflow-hidden">
         <div className="max-w-[1171px] mx-auto px-6">
-          {/* Section title matching Figma */}
-          <div className="text-center mb-16">
+          {/* Section title matching Figma specs */}
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-display font-medium text-[12px] tracking-[6px] text-black uppercase">
               Wearables & Smart Devices
             </h2>
           </div>
-        </div>
 
-        {/* Cards Container - Full Viewport Width */}
-        <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Left Card: Lunettes Connectées — Rectangle 34 in Figma: #D9D9D9 @ 8% opacity */}
-            <div className="border-y border-neutral-100 p-8 md:p-12 lg:p-24 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden" style={{ backgroundColor: "rgba(217,217,217,0.08)" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 relative">
+            {/* Central divider line visible on desktop matching Figma */}
+            <div className="hidden lg:block absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 h-[70%] w-[1px] bg-neutral-300" />
 
-              
-              <div className="flex flex-col gap-6 w-full relative z-10">
-                {/* 1. Title Container */}
-                <div className="max-w-[500px] w-full mx-auto flex flex-col items-center text-center gap-4">
-                  <span className="text-[18px] font-normal text-neutral-500 uppercase">
-                    (Smart Eyewear)
-                  </span>
-                  <h3 className="font-display font-bold text-[32px] md:text-[40px] uppercase text-black leading-tight md:whitespace-nowrap md:leading-[26px]">
-                    Lunettes Connectées
-                  </h3>
-                  <p className="text-[17px] font-normal text-black md:whitespace-nowrap">
-                    Vois le monde autrement. <span className="text-primary font-semibold">Connecté,</span> en permanence.
-                  </p>
-                </div>
+            {/* Left Column: Lunettes Connectées */}
+            <div className="flex flex-col items-center text-center justify-between h-full">
+              <div className="flex flex-col items-center w-full">
+                {/* Subtitle */}
+                <span className="text-[18px] font-normal leading-[26px] text-[#3E3E3E] uppercase mb-2">
+                  (Smart Eyewear)
+                </span>
+                {/* Title */}
+                <h3 className="font-display font-bold text-[32px] md:text-[40px] uppercase text-black leading-[26px] tracking-tight mb-4">
+                  Lunettes Connectées
+                </h3>
+                {/* Tagline */}
+                <p className="text-[17px] font-normal text-black mb-12 sm:mb-20 lg:mb-[200px]">
+                  Vois le monde autrement. <span className="text-primary font-semibold">Connecté,</span> en permanence.
+                </p>
                 
-                {/* 2. Glasses Image Container (spans full width/negative margin to touch left edge) */}
-                <div className="relative w-[calc(100%+4rem)] md:w-[calc(100%+6rem)] lg:w-[calc(100%+12rem)] h-[300px] md:h-[360px] lg:h-[420px] flex items-center justify-start my-8 lg:my-16 select-none -ml-8 md:-ml-12 lg:-ml-24 z-10">
-                  {/* Glasses image - enlarged, touching the left border */}
+                {/* Glasses Image Container - Pushed to the left edge of the screen */}
+                <div className="relative w-[calc(100%+4rem)] sm:w-[calc(100%+10rem)] lg:w-[calc(100%+20rem)] h-[280px] sm:h-[340px] lg:h-[400px] flex items-center justify-start my-4 select-none -ml-6 sm:-ml-12 md:-ml-16 lg:-ml-24 xl:-ml-[calc((100vw-1171px)/2+1.5rem)] z-10">
                   <img 
                     src="/images/shaka.png" 
                     alt="Lunettes Connectées ASUKA" 
-                    className="relative w-auto h-[90%] md:h-[95%] lg:h-[100%] object-contain drop-shadow-2xl z-10 scale-[1.3] lg:scale-[1.5] origin-left"
+                    className="relative w-auto h-full object-contain drop-shadow-2xl z-10 scale-[1.50] sm:scale-[1.4] lg:scale-[2.10] origin-left -translate-x-2 md:-translate-x-9"
                   />
                 </div>
 
-                {/* 3. Description Container */}
-                <div className="max-w-[500px] w-full mx-auto mt-6 lg:mt-10">
-                  <p className="font-display font-light text-[20px] leading-[26px] text-justify text-neutral-700 max-w-[459px] mx-auto">
-                    Les lunettes connectées ASUKA fusionnent <span className="font-medium">style africain</span> contemporain et technologie embarquée : notifications, audio, photos, vidéos, IA, navigation. Tout dans votre regard.
+                {/* Description - Figma exact size (20px, light) */}
+                <div className="w-full flex justify-center">
+                  <p className="font-display font-light text-[18px] md:text-[20px] leading-[26px] text-neutral-700 max-w-[459px] mt-16 sm:mt-24 lg:mt-[220px] mb-8 text-justify">
+                    <span className="font-medium text-black">Les lunettes connectées ASUKA fusionnent style africain</span> contemporain et technologie embarquée notifications, audio, photos, vidéos, IA, navigation. Tout dans votre regard.
                   </p>
                 </div>
               </div>
 
-              {/* 4. Button Container */}
-              <div className="flex justify-center max-w-[500px] w-full mx-auto mt-8 relative z-10">
+              {/* Button */}
+              <div className="flex justify-center w-full mt-2">
                 <Link 
                   href="#contact" 
-                  className="inline-flex items-center justify-between bg-black hover:bg-neutral-900 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                  className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
                 >
                   <span>Découvrir nos lunettes</span>
-                  <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                  <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
                     <ArrowUpRight size={18} />
                   </div>
                 </Link>
               </div>
-
             </div>
 
-            {/* Right Card: Montres Connectées (Lighter dark) */}
-            <div className="bg-[#2D2D2D] text-white p-8 md:p-12 lg:p-24 flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-              <div className="max-w-[500px] w-full mx-auto flex flex-col justify-between h-full gap-8">
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col items-center text-center gap-4">
-                    <span className="text-[18px] font-normal text-[#B5B5B5] uppercase">
-                      (Smart Watch)
-                    </span>
-                    <h3 className="font-display font-bold text-[32px] md:text-[40px] uppercase text-white leading-tight md:whitespace-nowrap md:leading-[26px]">
-                      Montres Connectées
-                    </h3>
-                    <p className="text-[17px] font-normal text-white md:whitespace-nowrap">
-                      <span className="text-primary font-semibold">Votre vie au poignet.</span> Santé, temps, connexion.
-                    </p>
-                  </div>
-                  
-                  {/* Watch Image with as_blanc spade behind */}
-                  <div className="relative w-full h-[300px] md:h-[360px] lg:h-[420px] flex items-center justify-center my-8 lg:my-16 select-none z-10">
-                    {/* Watch image */}
-                    <img 
-                      src="/images/montre.png" 
-                      alt="Montre Connectée ASUKA" 
-                      className="relative w-auto h-[90%] md:h-[95%] lg:h-[100%] object-contain drop-shadow-2xl z-10 scale-[1.3] lg:scale-[1.5] origin-center"
-                    />
-                  </div>
+            {/* Right Column: Montres Connectées */}
+            <div className="flex flex-col items-center text-center justify-between h-full pt-10 lg:pt-0">
+              <div className="flex flex-col items-center w-full">
+                {/* Subtitle */}
+                <span className="text-[18px] font-normal leading-[26px] text-[#3E3E3E] uppercase mb-2">
+                  (Smart Watch)
+                </span>
+                {/* Title */}
+                <h3 className="font-display font-bold text-[32px] md:text-[40px] uppercase text-black leading-[26px] tracking-tight mb-4">
+                  Montres Connectées
+                </h3>
+                {/* Tagline */}
+                <p className="text-[17px] font-normal text-black mb-12 sm:mb-20 lg:mb-[200px]">
+                  <span className="text-primary font-semibold">Votre vie au poignet.</span> Santé, temps, connexion.
+                </p>
+                
+                {/* Watch Image Container */}
+                <div className="relative w-full h-[280px] sm:h-[340px] lg:h-[380px] flex items-center justify-center my-4 select-none">
+                  <img 
+                    src="/images/montre.png" 
+                    alt="Montre Connectée ASUKA" 
+                    className="w-auto h-full object-contain drop-shadow-xl scale-[1.15] lg:scale-[2] origin-center"
+                  />
+                </div>
 
-                  <p className="font-display font-medium text-[20px] leading-[26px] text-justify text-white max-w-[459px] mx-auto mt-6 lg:mt-10">
-                    Conçue pour l'Africain actif : suivi santé, alertes intelligentes, autonomie longue durée. Une montre qui travaille autant que vous.
+                {/* Description - Figma exact size (20px, light) */}
+                <div className="w-full flex justify-center">
+                  <p className="font-display font-light text-[18px] md:text-[20px] leading-[26px] text-neutral-700 max-w-[459px] mt-16 sm:mt-24 lg:mt-[240px] mb-8 text-justify">
+                    Conçue pour l'Africain actif suivi santé, alertes intelligentes, autonomie longue durée. Une montre qui travaille autant que vous.
                   </p>
                 </div>
+              </div>
 
-                <div className="flex justify-center">
-                  <Link 
-                    href="/montres" 
-                    className="inline-flex items-center justify-between bg-white hover:bg-neutral-100 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
-                  >
-                    <span>Découvrir nos montres</span>
-                    <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
-                      <ArrowUpRight size={18} />
-                    </div>
-                  </Link>
-                </div>
+              {/* Button */}
+              <div className="flex justify-center w-full mt-2">
+                <Link 
+                  href="/montres" 
+                  className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
+                >
+                  <span>Découvrir nos montres</span>
+                  <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                    <ArrowUpRight size={18} />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -297,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* 5. Section Dr ASUKA (Redesigned with WHITE background to match design) */}
-      <section className="pt-0 pb-24 bg-white text-black">
+      <section className="mt-12 lg:mt-20 pt-0 pb-16 bg-white text-black">
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
             {/* Left side text */}
@@ -317,7 +328,9 @@ export default function Home() {
 
               <div className="mt-4">
                 <Link 
-                  href="#contact" 
+                  href="https://docteurasuka.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
                 >
                   <span>En savoir plus</span>
@@ -341,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* 6. Section Solutions & Financement (AS Pay / Assuk Assur / Stats) */}
-      <section id="solutions" className="py-24 bg-[#FAFAFA] border-t border-neutral-100 scroll-mt-[80px]">
+      <section id="solutions" className="py-16 bg-white border-t border-neutral-100 scroll-mt-[80px]">
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display font-medium text-[12px] tracking-[6px] text-black">
@@ -365,7 +378,7 @@ export default function Home() {
             </div>
 
             {/* Assuk Assur (Light card) */}
-            <div className="p-8 lg:p-10 bg-[#FFFFFF] text-black border border-neutral-100 rounded-[50px] w-full lg:w-[417px] lg:h-[389px] flex flex-col justify-center items-center shadow-sm relative overflow-hidden mx-auto">
+            <div className="p-8 lg:p-10 bg-[#D9D9D9]/[0.08] text-black rounded-[50px] w-full lg:w-[426px] lg:h-[389px] flex flex-col justify-center items-center relative overflow-hidden mx-auto">
               <div className="flex flex-col items-center text-center gap-6">
                 <img 
                   src="/images/assuka_assur.png" 
@@ -446,7 +459,7 @@ export default function Home() {
       </section>
 
       {/* 7. Section Ils Nous Font Confiance (Logos) */}
-      <section className="py-16 bg-[#FAFAFA] border-y border-neutral-100">
+      <section className="py-10 bg-[#FAFAFA] border-y border-neutral-100">
         <div className="max-w-[1171px] mx-auto px-6 text-center">
           <h3 className="font-sans font-medium text-[12px] leading-none uppercase tracking-[0.5em] text-black mb-8">
             ILS NOUS FONT CONFIANCE
@@ -462,7 +475,7 @@ export default function Home() {
       </section>
 
       {/* 8. Contact Form Section (Exploded view: Form on left, Athlete image placeholder on right inside same card) */}
-      <section id="contact" className="py-24 bg-white scroll-mt-[160px]">
+      <section id="contact" className="py-16 bg-white scroll-mt-[160px]">
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-sans font-medium text-[12px] leading-none tracking-[0.5em] text-black">
@@ -470,11 +483,11 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="relative max-w-[882px] w-full">
+          <div className="relative w-full mx-auto">
             {/* Rectangle 42: Contact Card */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 rounded-[50px] overflow-hidden shadow-2xl bg-[#212121] lg:h-[651px] relative w-full">
-              {/* Left Column: Form */}
-              <div className="text-white p-8 md:p-12 lg:pl-[83px] lg:pt-[62px] lg:pb-[86px] lg:pr-6 lg:col-span-7 flex flex-col justify-between h-full z-10">
+            <div className="rounded-[50px] overflow-hidden shadow-2xl bg-[#212121] relative w-full">
+              {/* Form container */}
+              <div className="text-white p-8 md:p-12 lg:p-16 flex flex-col justify-between h-full z-10">
                 <div className="mb-6">
                   <h2 className="font-sans font-semibold text-[22px] sm:text-[25px] leading-none uppercase mb-4 text-white">
                     Envoyez-nous un message
@@ -550,48 +563,6 @@ export default function Home() {
                   </div>
                 </form>
               </div>
-
-              {/* Right Column: Empty on desktop to make room for absolute athlete, handles image on mobile */}
-              <div className="lg:col-span-5 relative min-h-[350px] lg:min-h-0 overflow-hidden lg:overflow-visible">
-                <img 
-                  src="/images/casque.png" 
-                  alt="Athlète avec Casque VR"
-                  className="absolute inset-0 w-full h-full object-cover lg:hidden"
-                />
-              </div>
-            </div>
-
-            {/* Desktop Text "VOIR LA HIGH-TECH AUTREMENT" above head */}
-            <div className="hidden lg:flex flex-col items-center absolute z-30 text-center whitespace-nowrap"
-                 style={{
-                   left: "max(1123px, calc(50vw + 387.5px))",
-                   top: "-130px",
-                   transform: "translateX(-50%)"
-                 }}>
-              <span className="text-[#555555] font-sans font-medium text-[18px] tracking-[0.1em] uppercase">
-                Voir la
-              </span>
-              <span className="text-black font-sans font-extrabold text-[32px] leading-tight uppercase my-0.5">
-                High-Tech
-              </span>
-              <span className="text-[#555555] font-sans font-medium text-[18px] tracking-[0.1em] uppercase">
-                autrement
-              </span>
-            </div>
-
-            {/* Desktop Exploding Athlete Image */}
-            <div className="hidden lg:block absolute z-20 pointer-events-none select-none"
-                 style={{
-                   left: "max(320px, calc(50vw - 415.5px))",
-                   top: "-30px",
-                   width: "1000px",
-                   height: "930px"
-                 }}>
-              <img 
-                src="/images/casque.png" 
-                alt="Athlète avec Casque VR"
-                className="w-full h-full object-contain"
-              />
             </div>
           </div>
         </div>
