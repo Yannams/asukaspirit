@@ -197,6 +197,8 @@ export default function MontresPage() {
 
 
 
+
+
       {/* New Call to Action (CTA) */}
       <section className="py-10 md:py-16 bg-[#FAFAFA] flex items-center justify-center px-6">
         <div className="w-full max-w-[1171px] bg-[#222222] rounded-[32px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-16 relative">

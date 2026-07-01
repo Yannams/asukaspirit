@@ -25,7 +25,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Ordinateurs", href: "/ordinateurs" },
     { name: "Montres", href: "/montres" },
-    { name: "Lunettes", href: "/#wearables" },
+    { name: "Lunettes", href: "/lunettes" },
     { name: "Contact", href: "/#contact" }
   ];
 
