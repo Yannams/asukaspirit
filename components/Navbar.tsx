@@ -26,7 +26,7 @@ export default function Navbar() {
     { name: "Ordinateurs", href: "/ordinateurs" },
     { name: "Montres", href: "/montres" },
     { name: "Lunettes", href: "/lunettes" },
-    { name: "Contact", href: "/#contact" }
+    { name: "Contact", href: "/contact" }
   ];
 
   return (
