@@ -1,114 +1,126 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle, Smartphone, Globe, Shield } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle, Smartphone, Globe, Shield } from "lucide-react";
 import FigmaImage from "../../../components/FigmaImage";
+import AnimatedHero from "./AnimatedHero";
 
 export default function RevoFreePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Return to Catalog bar */}
-      <div className="bg-neutral-50 dark:bg-neutral-950 border-b border-neutral-200/50 py-4">
+      <AnimatedHero />
+
+      {/* Banner FIFA & SHANGO */}
+      <section className="h-[221px] w-full flex items-center justify-center bg-[#FCFCFC] z-10 relative">
+        <h2 className="text-[#212121] text-[50px] font-semibold uppercase">
+          FIFA & SHANGO
+        </h2>
+      </section>
+
+      {/* Intro text */}
+      <section className="py-16 bg-white z-10 relative">
         <div className="max-w-[1171px] mx-auto px-6">
-          <Link href="/ordinateurs" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted hover:text-primary transition-colors">
-            <ArrowLeft size={14} />
-            Retour au Catalogue
-          </Link>
+          <p className="text-[#212121] text-[17px] font-normal leading-[1.53] max-w-[504px] mx-auto text-center">
+            Plutôt que d&apos;inonder nos clients de choix complexes, nous avons opté pour une offre épurée avec deux modèles clés :
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* Hero Header */}
-      <section className="py-20 bg-white dark:bg-black">
-        <div className="max-w-[1171px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3.5 py-1.5 rounded-full w-max">
-              Gamme Grand Public
-            </span>
-            <h1 className="font-display font-extrabold text-4xl md:text-6xl uppercase tracking-tight">
-              Revo FREE
-            </h1>
-            <h2 className="font-display font-medium text-lg md:text-xl text-accent uppercase leading-relaxed">
-              La technologie neuve accessible à tous, avec deux modèles adaptés à chaque besoin.
-            </h2>
-            <div className="mt-4 pt-4 border-t border-neutral-100 dark:border-neutral-900">
-              <h3 className="font-display font-bold text-sm uppercase text-neutral-400 mb-2">La naissance de la gamme Revo free</h3>
-              <p className="text-muted text-sm leading-relaxed">
-                Chez ASUKA SPIRIT, nous croyons fermement que chacun mérite un accès facile à la technologie neuve et de qualité. En écoutant les besoins de notre communauté, nous avons choisi de créer la gamme REVO FREE. L’idée était simple : proposer des ordinateurs neufs, fiables et faciles à choisir, pour que chacun trouve rapidement l’outil qui lui convient.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-3xl overflow-hidden border border-neutral-200/50 dark:border-neutral-900 shadow-lg bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center p-6 h-80 select-none">
-            <img
-              src="/images/laptop_free.png"
-              alt="Revo Free Concept"
-              className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+      {/* Models split view */}
+      <section className="w-full flex flex-col lg:flex-row z-10 relative">
+        {/* Shango side (Left) */}
+        <div className="flex-1 bg-[#212121] py-20 px-6 sm:px-12 flex flex-col items-center text-center">
+          <span className="text-[#F47639] text-[15px] font-normal uppercase mb-0">REVO</span>
+          <h3 className="text-[#FCFCFC] text-[50px] font-normal uppercase mb-4 leading-tight">SHANGO</h3>
+          <p className="text-[#FCFCFC] text-[15px] font-normal max-w-[541px] leading-relaxed mb-12">
+            Notre modèle « pro » est doté d&apos;un <strong className="text-[#F47639] font-bold">Intel Core i7</strong> (13ᵉ génération), de <strong className="text-[#F47639] font-bold">16 Go de RAM</strong> et d&apos;un <strong className="text-[#F47639] font-bold">SSD de 1 To</strong>, parfait pour les utilisateurs exigeants.
+          </p>
+          <div className="flex-grow flex items-center justify-center mb-12 w-full">
+            <img 
+              src="/images/laptop-shango_revo-free_fifa&shango.png" 
+              alt="Revo Free Shango" 
+              className="w-full max-w-[500px] object-contain hover:scale-105 transition-transform duration-500" 
             />
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto">
+            <Link 
+              href="/ordinateurs/revo-free/shango" 
+              className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
+            >
+              Commander
+            </Link>
+            <Link 
+              href="/ordinateurs/revo-free/shango" 
+              className="border border-[#FCFCFC] text-[#FCFCFC] px-8 py-3.5 font-semibold text-sm hover:bg-[#FCFCFC] hover:text-[#212121] transition-colors flex items-center justify-center gap-2 group"
+            >
+              En savoir plus
+              <ArrowRight size={16} className="-rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+
+        {/* FIFA side (Right) */}
+        <div className="flex-1 bg-[#FCFCFC] py-20 px-6 sm:px-12 flex flex-col items-center text-center">
+          <span className="text-[#F47639] text-[15px] font-normal uppercase mb-0">REVO</span>
+          <h3 className="text-[#212121] text-[50px] font-normal uppercase mb-4 leading-tight">FIFA</h3>
+          <p className="text-[#212121] text-[15px] font-normal max-w-[541px] leading-relaxed mb-12">
+            Ce modèle « light » embarque un processeur Intel Celeron, <strong className="text-[#F47639] font-bold">4 Go de RAM</strong> et un <strong className="text-[#F47639] font-bold">SSD de 512 Go</strong>, idéal pour les tâches du quotidien.
+          </p>
+          <div className="flex-grow flex items-center justify-center mb-12 w-full">
+            <img 
+              src="/images/laptop-fifa_revo-free_fifa&shango.png" 
+              alt="Revo Free FIFA" 
+              className="w-full max-w-[500px] object-contain hover:scale-105 transition-transform duration-500" 
+            />
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto">
+            <Link 
+              href="/ordinateurs/revo-free/fifa" 
+              className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
+            >
+              Commander
+            </Link>
+            <Link 
+              href="/ordinateurs/revo-free/fifa" 
+              className="border border-[#212121] text-[#212121] px-8 py-3.5 font-semibold text-sm hover:bg-[#212121] hover:text-white transition-colors flex items-center justify-center gap-2 group"
+            >
+              En savoir plus
+              <ArrowRight size={16} className="-rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Models list */}
-      <section className="py-24 bg-neutral-50 dark:bg-neutral-950">
-        <div className="max-w-[1171px] mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent">FIFA & SHANGO</span>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl uppercase mt-2 mb-4">
-              Une offre simple et épurée
+      {/* Call to Action (CTA) */}
+      <section className="py-10 md:py-16 bg-[#FAFAFA] flex items-center justify-center px-6">
+        <div className="w-full max-w-[1171px] bg-[#222222] rounded-[32px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-16 relative">
+          
+          {/* Left Text Content */}
+          <div className="flex flex-col text-center md:text-left z-10 w-full md:w-1/2">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6 uppercase">
+              PRÊT À AMÉLIORER VOTRE TECHNOLOGIE ?
             </h2>
-            <p className="text-muted max-w-xl mx-auto text-sm">
-              Plutôt que d’inonder nos clients de choix complexes, nous avons opté pour une offre épurée avec deux modèles clés :
+            <p className="text-[#D1D1D1] text-lg mb-10 leading-relaxed max-w-md">
+              Rejoignez des millions de personnes qui font confiance à ASUKA SPIRIT pour la qualité, l&apos;innovation et le style.
             </p>
+
+            {/* Button */}
+            <Link 
+              href="#rejoindre" 
+              className="inline-flex items-center justify-between gap-6 bg-white hover:bg-neutral-200 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[24px] pr-[3px] h-[55px] transition-all duration-300 group w-fit mx-auto md:mx-0"
+            >
+              <span>Rejoindre ASUKA SPIRIT</span>
+              <div className="w-[49px] h-[49px] rounded-full bg-primary flex items-center justify-center text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                <ArrowUpRight size={20} />
+              </div>
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Model 1: Revo Free Shango */}
-            <div className="bg-white dark:bg-neutral-900 border border-neutral-200/50 rounded-3xl p-8 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
-              <div>
-                <span className="text-xs font-bold uppercase text-accent tracking-wider">REVO SHANGO</span>
-                <h3 className="font-display font-bold text-3xl uppercase mt-2 mb-3">Revo Free Shango</h3>
-                <p className="text-muted text-sm leading-relaxed mb-6">
-                  Notre modèle « pro » est doté d’un Intel Core i7 (13ᵉ génération), de 16 Go de RAM et d’un SSD de 1 To, parfait pour les utilisateurs exigeants.
-                </p>
-              </div>
-              <div className="mb-6 rounded-2xl overflow-hidden bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-4 h-48 select-none">
-                <img
-                  src="/images/laptop_free.png"
-                  alt="Revo Free Shango"
-                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <Link
-                href="/ordinateurs/revo-free/shango"
-                className="bg-black hover:bg-accent text-white py-3.5 rounded-full text-center text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-2"
-              >
-                Découvrir Shango
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
-            {/* Model 2: Revo Free FIFA */}
-            <div className="bg-white dark:bg-neutral-900 border border-neutral-200/50 rounded-3xl p-8 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
-              <div>
-                <span className="text-xs font-bold uppercase text-accent tracking-wider">REVO FIFA</span>
-                <h3 className="font-display font-bold text-3xl uppercase mt-2 mb-3">Revo Free FIFA</h3>
-                <p className="text-muted text-sm leading-relaxed mb-6">
-                  Ce modèle « light » embarque un processeur Intel Celeron, 4 Go de RAM et un SSD de 512 Go, idéal pour les tâches du quotidien.
-                </p>
-              </div>
-              <div className="mb-6 rounded-2xl overflow-hidden bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center p-4 h-48 select-none">
-                <img
-                  src="/images/laptop_free.png"
-                  alt="Revo Free FIFA"
-                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <Link
-                href="/ordinateurs/revo-free/fifa"
-                className="bg-black hover:bg-accent text-white py-3.5 rounded-full text-center text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-2"
-              >
-                Découvrir FIFA
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+          {/* Right Image */}
+          <div className="w-full md:w-[50%] mt-12 md:mt-0 relative flex justify-center md:justify-end z-10">
+            <img 
+              src="/images/groupe_13_1_I478_1145;304_1348.png" 
+              alt="ASUKA SPIRIT Products" 
+              className="w-full max-w-[600px] object-contain drop-shadow-2xl" 
+            />
           </div>
         </div>
       </section>

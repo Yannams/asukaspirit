@@ -6,7 +6,7 @@ export default function OrdinateursPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-white py-12 md:py-16 flex flex-col items-center text-center px-6 border-b border-neutral-100">
+      <section className="bg-white py-12 md:py-16 flex flex-col items-center text-center px-6">
         <div className="max-w-[1171px] mx-auto flex flex-col items-center">
           <span className="font-display font-normal text-[16px] text-black bg-[#E9E9E9] py-[6px] px-[18px] rounded-[48px] mb-6">
             Ordinateur <span className="text-primary font-medium">REVO</span> ASUKA SPIRIT
@@ -31,7 +31,7 @@ export default function OrdinateursPage() {
       </section>
 
       {/* 2. Section SANS LIMITES (Images + Text) */}
-      <section id="vision" className="py-12 md:py-16 bg-white overflow-hidden border-b border-neutral-100">
+      <section id="vision" className="py-12 md:py-16 bg-white overflow-hidden">
         <div className="max-w-[1171px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-16 lg:gap-[67px]">
           {/* Left Column: Overlapping Images */}
           <div className="relative w-full max-w-[643px] aspect-[643/864] shrink-0">
@@ -63,7 +63,7 @@ export default function OrdinateursPage() {
       </section>
 
       {/* 3. Section REVO FREE */}
-      <section className="py-12 md:py-16 bg-white overflow-hidden border-b border-neutral-100">
+      <section className="py-12 md:py-16 bg-white overflow-hidden">
         <div className="max-w-[1171px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-[67px]">
           {/* Left Column: Overlapping Images */}
           <div className="relative w-full max-w-[600px] lg:max-w-none lg:w-[1041px] lg:-ml-[184px] aspect-[1041/880] shrink-0">
@@ -97,15 +97,26 @@ export default function OrdinateursPage() {
             <h3 className="font-display font-light text-[24px] lg:text-[29px] leading-[1.2] text-[#222222] mb-8">
               La technologie neuve accessible à tous.
             </h3>
-            <p className="font-display font-normal text-[18px] lg:text-[21px] leading-[1.5] text-[#222222]">
+            <p className="font-display font-normal text-[18px] lg:text-[21px] leading-[1.5] text-[#222222] mb-10">
               <span className="font-bold">REVO FREE</span> a été pensée pour simplifier le choix des utilisateurs en proposant deux modèles essentiels couvrant les besoins du quotidien et les usages professionnels.
             </p>
+
+            {/* Button */}
+            <Link 
+              href="/ordinateurs/revo-free" 
+              className="inline-flex items-center justify-between gap-6 bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[20px] pr-[2px] h-[47px] transition-all duration-300 group w-fit"
+            >
+              <span>En savoir plus</span>
+              <div className="w-[43px] h-[43px] rounded-full bg-primary flex items-center justify-center text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                <ArrowUpRight size={18} />
+              </div>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* 4. Section REVO CORP */}
-      <section className="py-12 md:py-16 bg-[#FAFAFA] overflow-hidden border-b border-neutral-100">
+      <section className="py-12 md:py-16 bg-[#FAFAFA] overflow-hidden">
         <div className="max-w-[1171px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-[67px]">
           {/* Left Column: Text Figma Specs */}
           <div className="flex flex-col w-full max-w-[461px] text-center lg:text-left items-center lg:items-start z-10 lg:mt-[150px]">
@@ -124,7 +135,7 @@ export default function OrdinateursPage() {
 
             {/* Button */}
             <Link 
-              href="#gammes" 
+              href="/ordinateurs/revo-corp" 
               className="inline-flex items-center justify-between gap-6 bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[20px] pr-[2px] h-[47px] transition-all duration-300 group w-fit"
             >
               <span>En savoir plus</span>
@@ -168,7 +179,7 @@ export default function OrdinateursPage() {
       </section>
 
       {/* 5. Section VISION ASUKA SPIRIT */}
-      <section className="py-12 md:py-16 bg-white overflow-hidden border-b border-neutral-100">
+      <section className="py-12 md:py-16 bg-white overflow-hidden">
         <div className="max-w-[1171px] mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-[67px]">
           {/* Left Column: Image Man with Glasses */}
           <div className="relative w-full max-w-[500px] lg:max-w-none lg:w-[512px] aspect-[512/719] shrink-0">
