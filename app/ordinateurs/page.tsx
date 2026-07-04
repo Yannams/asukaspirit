@@ -228,7 +228,7 @@ export default function OrdinateursPage() {
 
             {/* Button */}
             <Link 
-              href="#rejoindre" 
+              href="/contact" 
               className="inline-flex items-center justify-between gap-6 bg-white hover:bg-neutral-200 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[24px] pr-[3px] h-[55px] transition-all duration-300 group w-fit mx-auto md:mx-0"
             >
               <span>Rejoindre ASUKA SPIRIT</span>
