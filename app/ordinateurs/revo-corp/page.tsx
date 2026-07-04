@@ -191,10 +191,10 @@ export default function RevoCorpPage() {
                     {/* Image Section (Right) */}
                     <div className="w-full lg:w-1/2 relative h-[500px] md:h-[700px] flex items-start justify-center lg:-mt-24">
                       <div className="absolute top-0 right-0 w-[85%] h-[80%] z-0">
-                        <img src={product.images[0]} alt="Front" className="w-full h-full object-contain object-top" />
+                        <img src={product.images?.[0]} alt="Front" className="w-full h-full object-contain object-top" />
                       </div>
                       <div className="absolute -bottom-8 md:-bottom-16 -left-16 lg:-left-32 w-[85%] h-[85%] z-10 drop-shadow-2xl">
-                        <img src={product.images[1]} alt="Back" className="w-full h-full object-contain object-bottom -scale-x-100" />
+                        <img src={product.images?.[1]} alt="Back" className="w-full h-full object-contain object-bottom -scale-x-100" />
                       </div>
                     </div>
                   </div>
