@@ -94,7 +94,7 @@ export default function RevoCorpPage() {
         { name: "PROCESSEUR", value: "Intel Core i5-13400 13th Gen, 10 Cores, 16 threads, 2.50GHz à 4.60GHz Turbo" },
         { name: "STOCKAGE", value: "SSD 256 GB M.2 NVME" }
       ],
-      link: null
+      link: "/ordinateurs/revo-corp/revo-corp-5"
     }
   ];
 
