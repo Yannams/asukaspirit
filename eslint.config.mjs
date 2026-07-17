@@ -7,8 +7,9 @@ const eslintConfig = defineConfig([
   ...nextTs,
   {
     rules: {
-      "react/no-unescaped-entities": "off"
-    }
+      // Site content is in French — apostrophes in JSX text are expected.
+      "react/no-unescaped-entities": "off",
+    },
   },
   // Override default ignores of eslint-config-next.
   globalIgnores([
