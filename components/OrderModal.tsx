@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, cloneElement, isValidElement } from "react";
 import { X, ArrowUpRight, Check } from "lucide-react";
 
 export default function OrderModal({ children, defaultAppareil = "" }: { children: React.ReactNode, defaultAppareil?: string }) {
@@ -23,9 +23,21 @@ export default function OrderModal({ children, defaultAppareil = "" }: { childre
 
   return (
     <>
-      <div onClick={(e) => { e.preventDefault(); setIsOpen(true); }} className="contents cursor-pointer">
-        {children}
-      </div>
+      {isValidElement(children) ? (
+        cloneElement(children as React.ReactElement<any>, {
+          onClick: (e: any) => {
+            e.preventDefault();
+            setIsOpen(true);
+            if ((children as React.ReactElement<any>).props.onClick) {
+              (children as React.ReactElement<any>).props.onClick(e);
+            }
+          }
+        })
+      ) : (
+        <span onClick={(e) => { e.preventDefault(); setIsOpen(true); }} className="cursor-pointer">
+          {children}
+        </span>
+      )}
       
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity">

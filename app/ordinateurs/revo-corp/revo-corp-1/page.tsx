@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Cpu, Monitor, Zap, Check, ArrowUpRight } from "lucide-react";
 import FigmaImage from "../../../../components/FigmaImage";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 export default function RevoCorp1Page() {
   const specs = [
@@ -201,6 +202,8 @@ export default function RevoCorp1Page() {
         </div>
       </section>
    
+    
+      <FloatingOrderButton appareilName="REVO CORP 1" />
     </div>
   );
 }

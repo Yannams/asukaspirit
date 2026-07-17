@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle, Smartphone, Globe, Shield } from "lucide-react";
+import OrderModal from "@/components/OrderModal";
 import FigmaImage from "../../../components/FigmaImage";
 import AnimatedHero from "./AnimatedHero";
 
@@ -41,12 +42,13 @@ export default function RevoFreePage() {
             />
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto">
-            <Link 
-              href="/ordinateurs/revo-free/shango" 
-              className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
-            >
-              Commander
-            </Link>
+            <OrderModal defaultAppareil="REVO SHANGO">
+              <button 
+                className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
+              >
+                Commander
+              </button>
+            </OrderModal>
             <Link 
               href="/ordinateurs/revo-free/shango" 
               className="border border-[#FCFCFC] text-[#FCFCFC] px-8 py-3.5 font-semibold text-sm hover:bg-[#FCFCFC] hover:text-[#212121] transition-colors flex items-center justify-center gap-2 group"
@@ -72,12 +74,13 @@ export default function RevoFreePage() {
             />
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto">
-            <Link 
-              href="/ordinateurs/revo-free/fifa" 
-              className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
-            >
-              Commander
-            </Link>
+            <OrderModal defaultAppareil="REVO FIFA">
+              <button 
+                className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
+              >
+                Commander
+              </button>
+            </OrderModal>
             <Link 
               href="/ordinateurs/revo-free/fifa" 
               className="border border-[#212121] text-[#212121] px-8 py-3.5 font-semibold text-sm hover:bg-[#212121] hover:text-white transition-colors flex items-center justify-center gap-2 group"

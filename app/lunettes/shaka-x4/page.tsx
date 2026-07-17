@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Bluetooth, Music, Phone, Mic, Sparkles, Battery, PlayCircle } from "lucide-react";
 import OrderModal from "@/components/OrderModal";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 export default function ShakaX4Page() {
   return (
@@ -69,7 +70,7 @@ export default function ShakaX4Page() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         
-        <div className="absolute inset-0 w-full max-w-[1440px] mx-auto pointer-events-none relative">
+        <div className="absolute inset-0 w-full max-w-[1440px] mx-auto pointer-events-none z-10">
           {/* Top Left Title */}
           <div className="md:absolute md:top-[160px] md:left-[200px] mt-12 ml-6 md:mt-0 md:ml-0">
             <h2 
@@ -410,6 +411,8 @@ export default function ShakaX4Page() {
         </div>
       </section>
 
+    
+      <FloatingOrderButton appareilName="AS SHAKA X4" />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import FeaturesSlider from "./FeaturesSlider";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 export default function ASWatch3Page() {
   return (
@@ -254,6 +255,8 @@ export default function ASWatch3Page() {
         </div>
       </section>
 
+    
+      <FloatingOrderButton appareilName="AS WATCH 3" />
     </div>
   );
 }

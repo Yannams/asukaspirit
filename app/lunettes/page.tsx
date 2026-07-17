@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, Bluetooth, Music, Phone, Mic, Sparkles } from "lucide-react";
+import OrderModal from "@/components/OrderModal";
 
 export default function LunettesPage() {
   return (
@@ -141,12 +142,13 @@ export default function LunettesPage() {
             </p>
             
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-[20px]">
-              <Link 
-                href="#commander-shaka" 
-                className="inline-flex items-center justify-center bg-black hover:bg-neutral-800 text-white font-sans font-semibold text-[16px] h-[52px] px-8 transition-colors duration-300"
-              >
-                Commander
-              </Link>
+              <OrderModal defaultAppareil="AS SHAKA X4">
+                <button 
+                  className="inline-flex items-center justify-center bg-black hover:bg-neutral-800 text-white font-sans font-semibold text-[16px] h-[52px] px-8 transition-colors duration-300"
+                >
+                  Commander
+                </button>
+              </OrderModal>
               <Link 
                 href="/lunettes/shaka-x4" 
                 className="inline-flex items-center justify-center bg-transparent border border-[#222222] hover:bg-neutral-50 text-black font-sans font-medium text-[16px] h-[52px] px-[20px] transition-colors duration-300 gap-[3px] group"
@@ -174,12 +176,13 @@ export default function LunettesPage() {
             </p>
             
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-[20px]">
-              <Link 
-                href="#commander-aviator" 
-                className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-black text-white font-sans font-semibold text-[16px] h-[52px] px-8 transition-colors duration-300"
-              >
-                Commander
-              </Link>
+              <OrderModal defaultAppareil="AS GLASS AVIATOR">
+                <button 
+                  className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-black text-white font-sans font-semibold text-[16px] h-[52px] px-8 transition-colors duration-300"
+                >
+                  Commander
+                </button>
+              </OrderModal>
               <Link 
                 href="#savoir-aviator" 
                 className="inline-flex items-center justify-center bg-transparent border border-[#222222] hover:bg-neutral-50 text-black font-sans font-medium text-[16px] h-[52px] px-[20px] transition-colors duration-300 gap-[3px] group"
@@ -225,12 +228,13 @@ export default function LunettesPage() {
             </p>
             
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-[20px]">
-              <Link 
-                href="#commander-alpha" 
-                className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-black text-white font-sans font-semibold text-[16px] h-[52px] px-8 transition-colors duration-300"
-              >
-                Commander
-              </Link>
+              <OrderModal defaultAppareil="AS GLASS ALPHA">
+                <button 
+                  className="inline-flex items-center justify-center bg-[#1A1A1A] hover:bg-black text-white font-sans font-semibold text-[16px] h-[52px] px-8 transition-colors duration-300"
+                >
+                  Commander
+                </button>
+              </OrderModal>
               <Link 
                 href="#savoir-alpha" 
                 className="inline-flex items-center justify-center bg-transparent border border-[#222222] hover:bg-neutral-50 text-black font-sans font-medium text-[16px] h-[52px] px-[20px] transition-colors duration-300 gap-[3px] group"

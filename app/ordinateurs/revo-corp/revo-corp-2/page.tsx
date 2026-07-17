@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Cpu, Laptop, Zap, Check, ArrowUpRight } from "lucide-react";
+import OrderModal from "@/components/OrderModal";
 import FigmaImage from "../../../../components/FigmaImage";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 export default function RevoCorp2Page() {
   const laptop2Specs = [
@@ -197,9 +199,11 @@ export default function RevoCorp2Page() {
             </p>
             
             <div>
-              <button className="bg-[#242424] text-white text-[16px] font-medium px-10 py-4 hover:bg-black transition-colors">
-                Commander
-              </button>
+              <OrderModal defaultAppareil="REVO CORP 2">
+                <button className="bg-[#242424] text-white text-[16px] font-medium px-10 py-4 hover:bg-black transition-colors">
+                  Commander
+                </button>
+              </OrderModal>
             </div>
           </div>
 
@@ -233,9 +237,11 @@ export default function RevoCorp2Page() {
             </p>
             
             <div>
-              <button className="bg-[#242424] text-white text-[16px] font-medium px-10 py-4 hover:bg-black transition-colors">
-                Commander
-              </button>
+              <OrderModal defaultAppareil="REVO CORP 3">
+                <button className="bg-[#242424] text-white text-[16px] font-medium px-10 py-4 hover:bg-black transition-colors">
+                  Commander
+                </button>
+              </OrderModal>
             </div>
           </div>
 
@@ -336,6 +342,8 @@ export default function RevoCorp2Page() {
           
         </div>
       </section>
+    
+      <FloatingOrderButton appareilName="REVO CORP 2" />
     </div>
   );
 }
