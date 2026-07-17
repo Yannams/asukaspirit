@@ -75,7 +75,7 @@ export default function MontresPage() {
               </Link>
               
               <Link 
-                href="#contact" 
+                href="/montres/as-watch-1" 
                 className="inline-flex items-center justify-center bg-transparent border border-neutral-300 hover:border-black text-[#222222] font-sans font-semibold text-[14px] h-[44px] px-6 transition-all duration-300 gap-2 group"
               >
                 En savoir plus 
@@ -122,7 +122,7 @@ export default function MontresPage() {
               </Link>
               
               <Link 
-                href="#contact" 
+                href="/montres/as-watch-2" 
                 className="inline-flex items-center justify-center bg-white border border-neutral-300 hover:border-black text-[#222222] font-sans font-semibold text-[14px] h-[44px] px-6 transition-all duration-300 gap-2 group"
               >
                 En savoir plus 
@@ -134,7 +134,7 @@ export default function MontresPage() {
         </div>
       </section>
 
-      {/* Section AS WATCH 3 */}
+       {/* Section AS WATCH 3 */}
       <section className="bg-white py-24 overflow-visible border-b border-neutral-100">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative flex justify-center">
           
@@ -164,7 +164,7 @@ export default function MontresPage() {
                 </Link>
                 
                 <Link 
-                  href="#contact" 
+                  href="/montres/as-watch-3" 
                   className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-neutral-600 hover:border-white text-white font-sans font-semibold text-[14px] h-[48px] px-8 transition-all duration-300 gap-2 group"
                 >
                   En savoir plus 
