@@ -120,23 +120,22 @@ export default function HeroVideoSection() {
     }
   }, []);
 
-  // ---- SMOOTH ANIMATION LOOP ----
+  // ---- SMOOTH ANIMATION LOOP + SCROLL LISTENER ----
   const SMOOTH = 0.1;
 
-  const animLoop = useCallback(() => {
-    const a = anim.current;
-    const diff = a.targetProgress - a.currentProgress;
+  useEffect(() => {
+    function animLoop() {
+      const a = anim.current;
+      const diff = a.targetProgress - a.currentProgress;
 
-    if (Math.abs(diff) > 0.0001) {
-      a.currentProgress += diff * SMOOTH;
-      render(a.currentProgress);
+      if (Math.abs(diff) > 0.0001) {
+        a.currentProgress += diff * SMOOTH;
+        render(a.currentProgress);
+      }
+
+      a.rafId = requestAnimationFrame(animLoop);
     }
 
-    a.rafId = requestAnimationFrame(animLoop);
-  }, [render]);
-
-  // ---- SCROLL LISTENER ----
-  useEffect(() => {
     const onScroll = () => {
       if (!sectionRef.current) return;
       const top = sectionRef.current.getBoundingClientRect().top;
@@ -153,7 +152,7 @@ export default function HeroVideoSection() {
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(anim.current.rafId);
     };
-  }, [animLoop]);
+  }, [render]);
 
   // ---- INTERSECTION OBSERVER: pause when section leaves viewport ----
   useEffect(() => {
