@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Cpu, Monitor, Laptop, Zap, CheckCircle, ArrowRight, ArrowUpRight } from "lucide-react";
+import OrderModal from "@/components/OrderModal";
 import FigmaImage from "../../../components/FigmaImage";
 
 export default function RevoCorpPage() {
@@ -166,12 +167,13 @@ export default function RevoCorpPage() {
                         )}
 
                         <div className="flex flex-wrap items-center gap-4">
-                          <Link
-                            href="/#contact"
-                            className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3.5 px-8 transition-colors flex items-center justify-center min-w-[160px]"
-                          >
-                            Commander
-                          </Link>
+                          <OrderModal defaultAppareil={product.name}>
+                            <button
+                              className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3.5 px-8 transition-colors flex items-center justify-center min-w-[160px]"
+                            >
+                              Commander
+                            </button>
+                          </OrderModal>
                           {product.link ? (
                             <Link
                               href={product.link}
@@ -256,12 +258,13 @@ export default function RevoCorpPage() {
                       </div>
 
                       <div className="flex flex-wrap items-center gap-4">
-                        <Link
-                          href="/#contact"
-                          className="bg-[#F47639] hover:bg-[#e0652d] text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
-                        >
-                          Commander
-                        </Link>
+                        <OrderModal defaultAppareil={product.name}>
+                          <button
+                            className="bg-[#F47639] hover:bg-[#e0652d] text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
+                          >
+                            Commander
+                          </button>
+                        </OrderModal>
                         {product.link ? (
                           <Link
                             href={product.link}
@@ -326,12 +329,13 @@ export default function RevoCorpPage() {
                       )}
 
                       <div className="flex flex-wrap items-center gap-4">
-                        <Link
-                          href="/#contact"
-                          className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
-                        >
-                          Commander
-                        </Link>
+                        <OrderModal defaultAppareil={product.name}>
+                          <button
+                            className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
+                          >
+                            Commander
+                          </button>
+                        </OrderModal>
                         {product.link ? (
                           <Link
                             href={product.link}
@@ -418,12 +422,13 @@ export default function RevoCorpPage() {
                       </div>
 
                       <div className="flex flex-wrap items-center gap-4 mt-4">
-                        <Link
-                          href="/#contact"
-                          className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
-                        >
-                          Commander
-                        </Link>
+                        <OrderModal defaultAppareil={product.name}>
+                          <button
+                            className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
+                          >
+                            Commander
+                          </button>
+                        </OrderModal>
                         {product.link ? (
                           <Link
                             href={product.link}
@@ -501,12 +506,13 @@ export default function RevoCorpPage() {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-4">
-                    <Link
-                      href="/#contact"
-                      className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3.5 px-8 transition-colors flex items-center justify-center min-w-[160px]"
-                    >
-                      Commander
-                    </Link>
+                    <OrderModal defaultAppareil={product.name}>
+                      <button
+                        className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3.5 px-8 transition-colors flex items-center justify-center min-w-[160px]"
+                      >
+                        Commander
+                      </button>
+                    </OrderModal>
                     {product.link ? (
                       <Link
                         href={product.link}

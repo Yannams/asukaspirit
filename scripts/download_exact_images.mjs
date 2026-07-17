@@ -62,7 +62,7 @@ const registryPath = path.join(process.cwd(), 'public', 'images_registry.json');
 if (fs.existsSync(registryPath)) {
   try {
     imagesRegistry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
-  } catch (e) {
+  } catch {
     imagesRegistry = {};
   }
 }

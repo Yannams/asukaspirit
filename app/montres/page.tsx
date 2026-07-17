@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Watch, Heart, Flame, ShieldAlert, Award } from "lucide-react";
+import OrderModal from "@/components/OrderModal";
 import FigmaImage from "../../components/FigmaImage";
 
 export default function MontresPage() {
@@ -67,12 +68,13 @@ export default function MontresPage() {
             </p>
             
             <div className="flex items-center justify-center lg:justify-start gap-4">
-              <Link 
-                href="#contact" 
-                className="inline-flex items-center justify-center bg-[#222222] hover:bg-black text-white font-sans font-semibold text-[14px] h-[44px] px-8 transition-all duration-300"
-              >
-                Commander
-              </Link>
+              <OrderModal defaultAppareil="AS WATCH 1">
+                <button 
+                  className="inline-flex items-center justify-center bg-[#222222] hover:bg-black text-white font-sans font-semibold text-[14px] h-[44px] px-8 transition-all duration-300"
+                >
+                  Commander
+                </button>
+              </OrderModal>
               
               <Link 
                 href="/montres/as-watch-1" 
@@ -114,12 +116,13 @@ export default function MontresPage() {
             />
             
             <div className="absolute bottom-[5%] md:bottom-[10%] left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 z-20">
-              <Link 
-                href="#contact" 
-                className="inline-flex items-center justify-center bg-[#222222] hover:bg-black text-white font-sans font-semibold text-[14px] h-[44px] px-8 transition-all duration-300"
-              >
-                Commander
-              </Link>
+              <OrderModal defaultAppareil="AS WATCH 2">
+                <button 
+                  className="inline-flex items-center justify-center bg-[#222222] hover:bg-black text-white font-sans font-semibold text-[14px] h-[44px] px-8 transition-all duration-300"
+                >
+                  Commander
+                </button>
+              </OrderModal>
               
               <Link 
                 href="/montres/as-watch-2" 
@@ -156,12 +159,13 @@ export default function MontresPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <Link 
-                  href="#contact" 
-                  className="w-full sm:w-auto inline-flex items-center justify-center bg-[#F26A3B] hover:bg-[#D95529] text-white font-sans font-semibold text-[14px] h-[48px] px-10 transition-all duration-300"
-                >
-                  Commander
-                </Link>
+                <OrderModal defaultAppareil="AS WATCH 3">
+                  <button 
+                    className="w-full sm:w-auto inline-flex items-center justify-center bg-[#F26A3B] hover:bg-[#D95529] text-white font-sans font-semibold text-[14px] h-[48px] px-10 transition-all duration-300"
+                  >
+                    Commander
+                  </button>
+                </OrderModal>
                 
                 <Link 
                   href="/montres/as-watch-3" 

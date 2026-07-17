@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Sparkles, Zap, Users } from "lucide-react";
 import FigmaImage from "../../../../components/FigmaImage";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 export default function RevoFreeShangoPage() {
   return (
@@ -201,6 +202,8 @@ export default function RevoFreeShangoPage() {
           </div>
         </div>
       </section>
+    
+      <FloatingOrderButton appareilName="REVO FREE SHANGO" />
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +23,32 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Ordinateurs", href: "/ordinateurs" },
-    { name: "Montres", href: "/montres" },
-    { name: "Lunettes", href: "/lunettes" },
+    { 
+      name: "Ordinateurs", 
+      href: "/ordinateurs",
+      dropdown: [
+        { name: "REVO CORP", href: "/ordinateurs/revo-corp" },
+        { name: "REVO FREE", href: "/ordinateurs/revo-free" }
+      ]
+    },
+    { 
+      name: "Montres", 
+      href: "/montres",
+      dropdown: [
+        { name: "AS Watch 1", href: "/montres/as-watch-1" },
+        { name: "AS Watch 2", href: "/montres/as-watch-2" },
+        { name: "AS Watch 3", href: "/montres/as-watch-3" }
+      ]
+    },
+    { 
+      name: "Lunettes", 
+      href: "/lunettes",
+      dropdown: [
+        { name: "Shaka X4", href: "/lunettes/shaka-x4" },
+        { name: "Aviator", href: "/lunettes#savoir-aviator" },
+        { name: "Alpha", href: "/lunettes#savoir-alpha" }
+      ]
+    },
     { name: "Contact", href: "/contact" }
   ];
 
@@ -50,17 +73,33 @@ export default function Navbar() {
                transform: "translateX(-50%)"
              }}>
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
             return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`font-normal transition-colors relative py-1 text-[15px] hover:text-primary ${
-                  isActive ? "text-primary font-semibold" : "text-[#4E4E4E]"
-                }`}
-              >
-                {link.name}
-              </Link>
+              <div key={link.name} className="relative group flex items-center h-full py-4">
+                <Link
+                  href={link.href}
+                  className={`flex items-center gap-1 font-normal transition-colors text-[15px] hover:text-[#FF5A00] ${
+                    isActive ? "text-[#FF5A00] font-semibold" : "text-[#4E4E4E]"
+                  }`}
+                >
+                  {link.name}
+                  {link.dropdown && <ChevronDown size={14} className="opacity-70 mt-[2px] transition-transform duration-300 group-hover:rotate-180" />}
+                </Link>
+
+                {link.dropdown && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.1)] rounded-xl py-3 min-w-[180px] opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+                    {link.dropdown.map((sublink) => (
+                      <Link
+                        key={sublink.name}
+                        href={sublink.href}
+                        className="block px-6 py-2.5 text-[14px] text-[#4E4E4E] hover:text-[#FF5A00] hover:bg-neutral-50 transition-colors whitespace-nowrap"
+                      >
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
@@ -93,14 +132,29 @@ export default function Navbar() {
       >
         <div className="px-6 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="font-semibold py-2 text-sm border-b border-neutral-50 uppercase tracking-wider text-neutral-800 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
+            <div key={link.name} className="flex flex-col">
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="font-semibold py-2 text-sm border-b border-neutral-50 uppercase tracking-wider text-neutral-800 hover:text-[#FF5A00] transition-colors flex justify-between items-center"
+              >
+                {link.name}
+              </Link>
+              {link.dropdown && (
+                <div className="flex flex-col pl-4 mt-2 mb-2 gap-2 border-l-2 border-neutral-100 ml-2">
+                  {link.dropdown.map((sublink) => (
+                    <Link
+                      key={sublink.name}
+                      href={sublink.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-[13px] text-neutral-600 hover:text-[#FF5A00] py-1 transition-colors"
+                    >
+                      {sublink.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <div className="flex items-center justify-between mt-2 pt-2">
             <span className="text-xs font-bold text-neutral-400 uppercase tracking-wider">Langue</span>

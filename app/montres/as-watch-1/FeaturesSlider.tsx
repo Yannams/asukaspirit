@@ -17,8 +17,32 @@ const features = [
     imgSrc: "/images/image3-aw1-carousel.jpg"
   },
   {
-    title: "Suivre vos performances et analyser votre activité",
+    title: "Surveiller la fréquence cardiaque en temps réel",
     imgSrc: "/images/image4-aw1-carousel.jpg"
+  },
+  {
+    title: "Mesurer le taux d'oxygène dans le sang (SpO2)",
+    imgSrc: "/images/image5-aw1-carousel.jpg"
+  },
+  {
+    title: "Recevoir des rappels d'activité pour éviter de rester assis trop longtemps",
+    imgSrc: "/images/image6-aw1-carousel.jpg"
+  },
+  {
+    title: "Utiliser le chronomètre et le minuteur",
+    imgSrc: "/images/image7-aw1-carousel.jpg"
+  },
+  {
+    title: "Consulter l'heure, la date et la météo",
+    imgSrc: "/images/image8-aw1-carousel.jpg"
+  },
+  {
+    title: "Retrouver son téléphone grâce à la fonction de recherche de smartphone",
+    imgSrc: "/images/image9-aw1-carousel.jpg"
+  },
+  {
+    title: "Retrouver son téléphone grâce à la fonction de recherche de smartphone",
+    imgSrc: "/images/image10-aw1-carousel.jpg"
   }
 ];
 
