@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, Check, Sparkles, Zap, Users, ArrowUpRight } from "lucide-react";
 import FigmaImage from "../../../../components/FigmaImage";
 import HeroVideoSection from "@/components/HeroVideoSection";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 const LaptopIcon = () => (
   <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
@@ -308,6 +309,8 @@ export default function RevoFreeFifaPage() {
           </div>
         </div>
       </section>
+    
+      <FloatingOrderButton appareilName="REVO FREE FIFA" />
     </div>
   );
 }
