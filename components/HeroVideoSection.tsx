@@ -127,12 +127,9 @@ export default function HeroVideoSection() {
     const a = anim.current;
     const diff = a.targetProgress - a.currentProgress;
 
-      if (Math.abs(diff) > 0.0001) {
-        a.currentProgress += diff * SMOOTH;
-        render(a.currentProgress);
-      }
-
-      a.rafId = requestAnimationFrame(animLoop);
+    if (Math.abs(diff) > 0.0001) {
+      a.currentProgress += diff * SMOOTH;
+      render(a.currentProgress);
     }
 
     a.rafId = requestAnimationFrame(loop);
