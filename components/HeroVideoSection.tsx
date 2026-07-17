@@ -123,10 +123,9 @@ export default function HeroVideoSection() {
   // ---- SMOOTH ANIMATION LOOP + SCROLL LISTENER ----
   const SMOOTH = 0.1;
 
-  useEffect(() => {
-    function animLoop() {
-      const a = anim.current;
-      const diff = a.targetProgress - a.currentProgress;
+  const animLoop = useCallback(function loop() {
+    const a = anim.current;
+    const diff = a.targetProgress - a.currentProgress;
 
       if (Math.abs(diff) > 0.0001) {
         a.currentProgress += diff * SMOOTH;
@@ -136,6 +135,11 @@ export default function HeroVideoSection() {
       a.rafId = requestAnimationFrame(animLoop);
     }
 
+    a.rafId = requestAnimationFrame(loop);
+  }, [render]);
+
+  // ---- SCROLL LISTENER ----
+  useEffect(() => {
     const onScroll = () => {
       if (!sectionRef.current) return;
       const top = sectionRef.current.getBoundingClientRect().top;
