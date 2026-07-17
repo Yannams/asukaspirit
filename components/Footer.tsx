@@ -60,9 +60,9 @@ export default function Footer() {
             <a href="mailto:contact@asworld.tech" className="hover:text-black transition-colors">
               contact@asworld.tech
             </a>
-            <a href="#" className="hover:text-black transition-colors">
+            <Link href="/contact" className="hover:text-black transition-colors">
               Assistance
-            </a>
+            </Link>
           </div>
 
           {/* Social Icons */}

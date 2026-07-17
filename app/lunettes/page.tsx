@@ -148,7 +148,7 @@ export default function LunettesPage() {
                 Commander
               </Link>
               <Link 
-                href="#savoir-shaka" 
+                href="/lunettes/shaka-x4" 
                 className="inline-flex items-center justify-center bg-transparent border border-[#222222] hover:bg-neutral-50 text-black font-sans font-medium text-[16px] h-[52px] px-[20px] transition-colors duration-300 gap-[3px] group"
               >
                 En savoir 
