@@ -28,8 +28,9 @@ export default function OrderModal({ children, defaultAppareil = "" }: { childre
           onClick: (e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault();
             setIsOpen(true);
-            if ((children as React.ReactElement<React.HTMLAttributes<HTMLElement>>).props.onClick) {
-              (children as React.ReactElement<React.HTMLAttributes<HTMLElement>>).props.onClick(e);
+            const childProps = (children as React.ReactElement<React.HTMLAttributes<HTMLElement>>).props;
+            if (childProps.onClick) {
+              childProps.onClick(e);
             }
           }
         })
