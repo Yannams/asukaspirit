@@ -1,0 +1,81 @@
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .next/cache/
+
+stages:
+  - test
+  - deploy
+
+run_tests:
+  stage: test
+  only:
+    - /^main.*$/
+    - staging
+  before_script:
+    - echo "initialization steps"
+
+    - export NVM_DIR="$HOME/.nvm"
+    - . "$NVM_DIR/nvm.sh"
+
+    - nvm use 24.11.1
+    - npm install -f
+
+  script:
+    - echo "Run lint / build check"
+    - npm run lint
+    - npm run build
+
+deploy_to_server:
+  stage: deploy
+  environment: Develop
+  only:
+    - /^main.*$/
+  script:
+    - pwd
+    - echo "deploying prod"
+    - echo "Copy to desired destination"
+    - rsync -avzh --delete --progress --exclude='.next/cache/' * /var/www/html/webapp/asuka-spirit/frontend/
+    - cd /var/www/html/webapp/asuka-spirit/frontend/
+    - export PORT=3015
+
+    - export NVM_DIR="$HOME/.nvm"
+    - |
+      if [ -s "$NVM_DIR/nvm.sh" ]; then
+        . "$NVM_DIR/nvm.sh"
+      fi
+    - |
+      if [ -s "$NVM_DIR/bash_completion" ]; then
+        . "$NVM_DIR/bash_completion"
+      fi
+    - nvm use 24.11.1
+    - npm --version
+    - npm install -f
+    - npm run build
+    - ls -altr
+    - echo "Deploy server"
+    - /home/gitlab-runner/.nvm/versions/node/v24.11.1/bin/pm2 restart asuka-spirit-frontend --update-env || /home/gitlab-runner/.nvm/versions/node/v24.11.1/bin/pm2 start npm --name asuka-spirit-frontend -- run start -- -p 3015
+
+deploy_staging:
+  stage: deploy
+  environment: staging
+
+  only:
+    - staging
+
+  script:
+    - echo "Deploy STAGING"
+
+    - rsync -avzh --delete --progress --exclude='.next/cache/' * /var/www/html/webapp/asuka-spirit/frontend_staging/
+    - cd /var/www/html/webapp/asuka-spirit/frontend_staging/
+    - export PORT=3016
+
+    - export NVM_DIR="$HOME/.nvm"
+    - . "$NVM_DIR/nvm.sh"
+
+    - nvm use 24.11.1
+    - npm install -f
+    - npm run build
+
+    - /home/gitlab-runner/.nvm/versions/node/v24.11.1/bin/pm2 restart staging-asuka-spirit-frontend --update-env || /home/gitlab-runner/.nvm/versions/node/v24.11.1/bin/pm2 start npm --name staging-asuka-spirit-frontend -- run start -- -p 3016

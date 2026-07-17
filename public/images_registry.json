@@ -1,1 +1,46 @@
-{}
+{
+  "268:1115": {
+    "name": "revo_free_laptop",
+    "fileName": "/images/laptop_free.png"
+  },
+  "277:1227": {
+    "name": "revo_free_shango_hero",
+    "fileName": "/images/laptop_free.png"
+  },
+  "277:1228": {
+    "name": "revo_free_shango_laptop",
+    "fileName": "/images/laptop_free.png"
+  },
+  "304:1396": {
+    "name": "revo_free_fifa_laptop",
+    "fileName": "/images/laptop_free.png"
+  },
+  "517:722": {
+    "name": "as_watch_1_sport",
+    "fileName": "/images/montre_sport_1_517_722.png"
+  },
+  "502:713": {
+    "name": "as_watch_1_1",
+    "fileName": "/images/as_watch_1_1_502_713.png"
+  },
+  "502:715": {
+    "name": "as_watch_1_copie_1",
+    "fileName": "/images/as_watch_1_copie_1_502_715.png"
+  },
+  "517:727": {
+    "name": "c_5_1",
+    "fileName": "/images/c_5_1_517_727.png"
+  },
+  "479:1241": {
+    "name": "c_3_1",
+    "fileName": "/images/c_3_1_479_1241.png"
+  },
+  "502:714": {
+    "name": "c_3_2",
+    "fileName": "/images/c_3_2_502_714.png"
+  },
+  "512:719": {
+    "name": "athl_te_masculin_africain",
+    "fileName": "/images/athl_te_masculin_africain_en_pleine_202606171626_1_512_719.png"
+  }
+}

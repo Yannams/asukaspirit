@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -14,9 +14,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Asuka Spirit | La Technologie Africaine Conçue pour Tous",
   description: "Ordinateurs, lunettes connectées, montres connectées, services et solutions pensés pour l'Afrique, fabriqués pour durer par AS World Tech.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -25,10 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-black">
+    <html lang="fr" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-white text-black font-sans">
         <Navbar />
-        <main className="flex-grow pt-24">
+        <main className="flex-grow pt-[64px]">
           {children}
         </main>
         <Footer />
