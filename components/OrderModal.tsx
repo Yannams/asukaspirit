@@ -24,12 +24,12 @@ export default function OrderModal({ children, defaultAppareil = "" }: { childre
   return (
     <>
       {isValidElement(children) ? (
-        cloneElement(children as React.ReactElement<any>, {
-          onClick: (e: any) => {
+        cloneElement(children as React.ReactElement<React.HTMLAttributes<HTMLElement>>, {
+          onClick: (e: React.MouseEvent<HTMLElement>) => {
             e.preventDefault();
             setIsOpen(true);
-            if ((children as React.ReactElement<any>).props.onClick) {
-              (children as React.ReactElement<any>).props.onClick(e);
+            if ((children as React.ReactElement<React.HTMLAttributes<HTMLElement>>).props.onClick) {
+              (children as React.ReactElement<React.HTMLAttributes<HTMLElement>>).props.onClick(e);
             }
           }
         })

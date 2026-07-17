@@ -123,7 +123,7 @@ export default function HeroVideoSection() {
   // ---- SMOOTH ANIMATION LOOP ----
   const SMOOTH = 0.1;
 
-  const animLoop = useCallback(() => {
+  const animLoop = useCallback(function loop() {
     const a = anim.current;
     const diff = a.targetProgress - a.currentProgress;
 
@@ -132,7 +132,7 @@ export default function HeroVideoSection() {
       render(a.currentProgress);
     }
 
-    a.rafId = requestAnimationFrame(animLoop);
+    a.rafId = requestAnimationFrame(loop);
   }, [render]);
 
   // ---- SCROLL LISTENER ----
