@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import FloatingOrderButton from '@/components/FloatingOrderButton';
 
 export default function RevoCorp5Page() {
   return (
@@ -200,6 +201,8 @@ export default function RevoCorp5Page() {
           </div>
         </div>
       </section>
+    
+      <FloatingOrderButton appareilName="REVO CORP 5" />
     </div>
   );
 }
