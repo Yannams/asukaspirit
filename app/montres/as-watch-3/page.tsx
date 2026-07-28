@@ -20,15 +20,15 @@ export default function ASWatch3Page() {
           </div>
 
           {/* Right: Text */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center text-left text-white mt-10 md:mt-0 z-20 px-6 md:px-10 lg:px-20">
-            <div className="max-w-[600px]">
+          <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left text-white mt-10 md:mt-0 z-20 px-6 md:px-10 lg:px-20">
+            <div className="max-w-[600px] mx-auto md:mx-0">
               <p className="font-sans italic font-medium text-[20px] md:text-[28px] mb-4">
                 Série Outdoor Tactique
               </p>
               <h1 className="font-display font-bold text-[60px] md:text-[80px] lg:text-[100px] leading-[1.1] mb-6 tracking-wide">
                 AS<br />WATCH 3
               </h1>
-              <p className="font-sans text-[16px] md:text-[18px] text-[#e0e0e0] leading-[1.6] max-w-[450px]">
+              <p className="font-sans text-[16px] md:text-[18px] text-[#e0e0e0] leading-[1.6] max-w-[450px] mx-auto md:mx-0">
                 Puissance, endurance et caractère. Conçue pour les explorateurs modernes.
               </p>
             </div>

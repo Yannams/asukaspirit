@@ -8,26 +8,29 @@ export default function ShakaX4Page() {
     <div className="flex flex-col min-h-screen bg-white">
       
       {/* Hero Section (Black) */}
-      <section className="bg-black pt-24 pb-12 overflow-hidden relative min-h-[80vh] flex flex-col justify-end">
-        <div className="max-w-[1440px] mx-auto w-full relative z-10 px-6 md:px-12 h-full flex flex-col justify-between">
+      <section className="bg-black pt-24 pb-12 overflow-hidden relative min-h-[80vh] flex flex-col justify-center items-center">
+        <div className="max-w-[1440px] mx-auto w-full relative z-10 px-6 md:px-12 flex flex-col items-center text-center gap-8">
           
-          <div className="w-full flex justify-center relative z-10 flex-grow items-center">
-            <img 
-              src="/images/lunettes-shakax4-hero.png" 
-              alt="AS GLASS SHAKA X4" 
-              className="w-full max-w-[1000px] h-auto object-contain drop-shadow-2xl scale-125 md:scale-150 transform-gpu"
-            />
-          </div>
-
-          <div className="z-20 w-full px-6 md:px-0 mt-[-60px] md:mt-0 md:absolute md:left-[121px] md:bottom-[10%]">
+          <div className="z-20 w-full flex flex-col items-center">
             <h1 
-              className="text-white font-bold leading-none mb-4 max-w-full text-[50px] md:text-[72px] md:w-[383px]"
+              className="text-white font-bold leading-none mb-2 text-[50px] md:text-[72px]"
               style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
             >
               SHAKA X4
             </h1>
+          </div>
+
+          <div className="w-full flex justify-center relative z-10">
+            <img 
+              src="/images/lunettes-shakax4-hero.png" 
+              alt="AS GLASS SHAKA X4" 
+              className="w-full max-w-[800px] h-auto object-contain drop-shadow-2xl scale-110 md:scale-125 transform-gpu"
+            />
+          </div>
+          
+          <div className="z-20 w-full max-w-[600px]">
             <p 
-              className="text-white font-normal leading-relaxed max-w-full text-[15px] md:text-[17px] md:w-[389px] text-left md:text-justify"
+              className="text-white font-normal leading-relaxed text-[15px] md:text-[17px]"
               style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
             >
               L'avenir se porte. Design raffiné, caméra intégrée, son immersif et intelligence artificielle intégrée.
@@ -38,60 +41,53 @@ export default function ShakaX4Page() {
       </section>
 
       {/* Thumbnails Section */}
-      <section className="py-16 md:py-24 bg-white relative w-full overflow-hidden">
-        <div className="max-w-[1440px] mx-auto w-full relative px-6 md:px-0 flex flex-col md:block">
+      <section className="py-16 md:py-24 bg-white relative w-full overflow-hidden flex flex-col items-center">
+        <div className="max-w-[1440px] mx-auto w-full px-6 flex flex-col items-center text-center gap-8">
           
-          <div className="md:absolute md:left-[160px] md:top-0 mb-8 md:mb-0">
+          <div>
             <h2 
-              className="text-black font-bold leading-none w-full md:w-[171px] text-[17px] text-left md:text-justify"
+              className="text-black font-bold leading-none text-[20px] md:text-[24px]"
               style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
             >
               Différents modèles
             </h2>
           </div>
 
-          <div className="w-full flex md:absolute md:left-[566px] md:top-[52px] gap-6 md:gap-[30px] overflow-x-auto pb-4 snap-x">
+          <div className="w-full flex justify-center gap-6 md:gap-[30px] overflow-x-auto pb-4 snap-x">
             <img src="/images/lunette1-shakax4-différentModèles.png" alt="Shaka X4 View 1" className="w-[150px] h-[150px] md:w-[204px] md:h-[204px] object-cover hover:scale-105 transition-transform cursor-pointer shrink-0 snap-start" />
             <img src="/images/lunette2-shakax4-différentModèles.png" alt="Shaka X4 View 2" className="w-[150px] h-[150px] md:w-[204px] md:h-[204px] object-cover hover:scale-105 transition-transform cursor-pointer shrink-0 snap-start" />
             <img src="/images/lunette3-shakax4-différentModèles.png" alt="Shaka X4 View 3" className="w-[150px] h-[150px] md:w-[204px] md:h-[204px] object-cover hover:scale-105 transition-transform cursor-pointer shrink-0 snap-start" />
           </div>
 
-          {/* Desktop spacer since absolute positioning removes elements from flow */}
-          <div className="hidden md:block w-full h-[256px]"></div>
-
         </div>
       </section>
 
       {/* Lifestyle Full Width Image */}
-      <section className="relative w-full h-[50vh] md:h-[70vh] min-h-[600px] bg-neutral-100 overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[70vh] min-h-[600px] bg-neutral-100 overflow-hidden flex flex-col justify-center items-center">
         <img 
           src="/images/lunettes-shakax4-lifestyle.png" 
           alt="Shaka X4 Lifestyle" 
           className="absolute inset-0 w-full h-full object-cover"
         />
         
-        <div className="absolute inset-0 w-full max-w-[1440px] mx-auto pointer-events-none z-10">
-          {/* Top Left Title */}
-          <div className="md:absolute md:top-[160px] md:left-[200px] mt-12 ml-6 md:mt-0 md:ml-0">
-            <h2 
-              className="text-white font-bold leading-none max-w-full text-[40px] md:text-[72px] md:w-[383px] drop-shadow-md text-left md:text-justify"
-              style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
-            >
-              SHAKA X4
-            </h2>
-          </div>
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 flex flex-col items-center text-center gap-10">
+          <h2 
+            className="text-white font-bold leading-none text-[40px] md:text-[72px] drop-shadow-lg"
+            style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+          >
+            SHAKA X4
+          </h2>
 
-          {/* Bottom Right Button */}
-          <div className="absolute bottom-[40px] md:top-[618px] right-6 md:right-auto md:left-[1136px] pointer-events-auto">
+          <div className="pointer-events-auto">
             <OrderModal defaultAppareil="AS SHAKA X4">
               <div 
-                className="flex items-center justify-center text-white font-sans font-medium text-[16px] transition-colors duration-300 shadow-lg cursor-pointer hover:bg-neutral-800"
+                className="flex items-center justify-center text-white font-sans font-medium text-[16px] transition-colors duration-300 shadow-xl cursor-pointer hover:bg-neutral-800"
                 style={{ 
                   backgroundColor: '#212121', 
-                  width: '133px', 
-                  height: '48px', 
+                  width: '150px', 
+                  height: '52px', 
                   padding: '12px 16px',
-                  gap: '10px'
+                  borderRadius: '4px'
                 }}
               >
                 Commander
@@ -102,23 +98,23 @@ export default function ShakaX4Page() {
       </section>
 
       {/* Detail Section 1 */}
-      <section className="py-16 md:py-32 bg-white overflow-hidden relative">
-        <div className="max-w-[1440px] mx-auto w-full flex flex-col md:flex-row items-center relative px-6 md:px-0">
+      <section className="py-16 md:py-32 bg-white overflow-hidden relative flex flex-col items-center">
+        <div className="max-w-[1200px] mx-auto px-6 w-full flex flex-col items-center text-center gap-12">
           
-          <div className="w-full md:w-[40%] flex flex-col z-10 md:pl-[121px] mb-12 md:mb-0">
+          <div className="w-full max-w-[800px] flex flex-col z-10">
             <p 
-              className="text-black text-[15px] md:text-[17px] leading-[1.6] text-justify max-w-full md:w-[476px]"
+              className="text-black text-[15px] md:text-[17px] leading-[1.8]"
               style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
             >
               Capturez vos instants avec <span className="font-bold">AS SHAKA X4</span>. Immortalisez vos moments, écoutez votre musique et communiquez sans contrainte. Élégante, performante et intelligente, elle redéfinit la manière de vivre le multimédia au quotidien. Avec <span className="font-bold">AS WORLD TECH</span>, la technologie devient une extension naturelle de votre regard.
             </p>
           </div>
-          
-          <div className="w-full md:w-[60%] flex justify-end relative z-0 md:-mr-[25%] lg:-mr-[35%] md:translate-x-[25%] lg:translate-x-[35%]">
+
+          <div className="w-full flex justify-center z-0">
             <img 
               src="/images/lunettes-shakax4-detail1.png" 
               alt="Shaka X4 Détail" 
-              className="w-full h-auto object-contain max-w-[800px] lg:max-w-[1000px] scale-110 md:scale-125 md:origin-right transform-gpu"
+              className="w-full max-w-[800px] h-auto object-contain"
             />
           </div>
           
@@ -148,8 +144,8 @@ export default function ShakaX4Page() {
             <div className="w-full md:w-1/3 flex flex-col gap-10 z-10 order-2 md:order-1 mt-10 md:mt-0">
               
               {/* Item 1 */}
-              <div className="flex items-center justify-end gap-4">
-                <div className="flex flex-col items-end text-right">
+              <div className="flex items-center justify-center md:justify-end gap-4">
+                <div className="flex flex-col items-center md:items-end text-center md:text-right">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Monture</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Alliage titane léger, coloris noir graphite</span>
                 </div>
@@ -157,8 +153,8 @@ export default function ShakaX4Page() {
               </div>
 
               {/* Item 2 */}
-              <div className="flex items-center justify-end gap-4">
-                <div className="flex flex-col items-end text-right">
+              <div className="flex items-center justify-center md:justify-end gap-4">
+                <div className="flex flex-col items-center md:items-end text-center md:text-right">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Verres</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Anti-reflets, protection UV400, design panoramique</span>
                 </div>
@@ -166,8 +162,8 @@ export default function ShakaX4Page() {
               </div>
 
               {/* Item 3 */}
-              <div className="flex items-center justify-end gap-4">
-                <div className="flex flex-col items-end text-right">
+              <div className="flex items-center justify-center md:justify-end gap-4">
+                <div className="flex flex-col items-center md:items-end text-center md:text-right">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Caméra</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Capteur HD – photo et enregistrement vidéo</span>
                 </div>
@@ -175,8 +171,8 @@ export default function ShakaX4Page() {
               </div>
 
               {/* Item 4 */}
-              <div className="flex items-center justify-end gap-4">
-                <div className="flex flex-col items-end text-right">
+              <div className="flex items-center justify-center md:justify-end gap-4">
+                <div className="flex flex-col items-center md:items-end text-center md:text-right">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Audio</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Système stéréo à conduction osseuse + micro double</span>
                 </div>
@@ -198,36 +194,36 @@ export default function ShakaX4Page() {
             <div className="w-full md:w-1/3 flex flex-col gap-10 z-10 order-3 mt-10 md:mt-0">
               
               {/* Item 1 */}
-              <div className="flex items-center justify-start gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-[#FF5A00] shrink-0"></div>
-                <div className="flex flex-col items-start text-left">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Multimédia</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Fonction audio complète (appels, musique, assistant vocal)</span>
                 </div>
               </div>
 
               {/* Item 2 */}
-              <div className="flex items-center justify-start gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-[#FF5A00] shrink-0"></div>
-                <div className="flex flex-col items-start text-left">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Autonomie</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>6 à 8 heures d'utilisation continue</span>
                 </div>
               </div>
 
               {/* Item 3 */}
-              <div className="flex items-center justify-start gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-[#FF5A00] shrink-0"></div>
-                <div className="flex flex-col items-start text-left">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Connectivité</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Bluetooth stable longue portée</span>
                 </div>
               </div>
 
               {/* Item 4 */}
-              <div className="flex items-center justify-start gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-[#FF5A00] shrink-0"></div>
-                <div className="flex flex-col items-start text-left">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                   <span className="font-bold text-[15px] text-black" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Compatibilité</span>
                   <span className="text-[13px] text-neutral-600 mt-1" style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}>Android & iOS via application dédiée</span>
                 </div>
@@ -240,20 +236,31 @@ export default function ShakaX4Page() {
       </section>
 
       {/* Usage Section */}
-      <section className="py-16 md:py-24 bg-white relative w-full">
-        <div className="max-w-[1440px] mx-auto px-6 w-full flex flex-col">
+      <section className="py-16 md:py-24 bg-white relative w-full flex flex-col items-center text-center">
+        <div className="max-w-[1440px] mx-auto px-6 w-full flex flex-col items-center gap-8">
           
           <h2 
-            className="text-black font-bold text-[17px] md:text-[24px] mb-8 md:mb-12"
+            className="text-black font-bold text-[24px] md:text-[32px] uppercase"
             style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
           >
             Usage
           </h2>
 
-          <div className="w-full bg-black relative flex items-center justify-center min-h-[500px] md:h-[700px] overflow-hidden">
+          <div className="w-full max-w-[1000px] bg-black rounded-3xl p-8 md:p-16 flex flex-col items-center gap-8 overflow-hidden">
             
-            {/* Left Content */}
-            <div className="absolute left-6 md:left-[15%] top-1/2 -translate-y-1/2 flex flex-col items-center text-center z-20">
+            {/* Center Image */}
+            <div className="w-full max-w-[500px] flex justify-center items-center relative">
+              <div className="absolute inset-0 z-10 shadow-[inset_0_0_80px_60px_#000000] pointer-events-none"></div>
+              <img 
+                src="/images/lunettes-shakax4-usage.png" 
+                alt="Shaka X4 Usage" 
+                className="w-full h-auto object-cover rounded-2xl"
+                style={{ maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)' }}
+              />
+            </div>
+
+            {/* Description Content */}
+            <div className="flex flex-col items-center text-center z-20">
               <div className="mb-4 text-white">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 10H7C6.44772 10 6 10.4477 6 11V17C6 17.5523 6.44772 18 7 18H15C15.5523 18 16 17.5523 16 17V11C16 10.4477 15.5523 10 15 10Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -263,22 +270,11 @@ export default function ShakaX4Page() {
                 </svg>
               </div>
               <span 
-                className="text-white font-normal text-[14px] md:text-[16px] leading-[1.4]"
+                className="text-white font-normal text-[16px] md:text-[18px] leading-[1.6]"
                 style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
               >
                 Prendre des photos<br />et des vidéos
               </span>
-            </div>
-
-            {/* Center Image */}
-            <div className="relative h-full w-[80%] md:w-[450px] flex justify-center items-center">
-              <div className="absolute inset-0 z-10 shadow-[inset_0_0_80px_60px_#000000] pointer-events-none"></div>
-              <img 
-                src="/images/lunettes-shakax4-usage.png" 
-                alt="Shaka X4 Usage" 
-                className="w-full h-full object-cover"
-                style={{ maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)' }}
-              />
             </div>
 
           </div>
@@ -287,23 +283,29 @@ export default function ShakaX4Page() {
       </section>
 
       {/* Detail Section 2 */}
-      <section className="py-16 md:py-32 bg-white relative w-full overflow-hidden">
-        <div className="max-w-[1440px] mx-auto w-full flex flex-col md:flex-row items-center relative px-6 md:px-0">
+      <section className="py-16 md:py-32 bg-white relative w-full flex flex-col items-center">
+        <div className="max-w-[1200px] mx-auto px-6 w-full flex flex-col items-center text-center gap-12">
           
-          <div className="w-full md:absolute md:left-[164px] md:-mt-[120px] z-10 mb-10 md:mb-0">
-            <p 
-              className="text-black text-[15px] md:text-[17px] leading-[1.8] text-left md:text-justify max-w-full md:w-[476px]"
+          <div className="w-full max-w-[800px] flex flex-col z-10">
+            <h3 
+              className="text-black font-bold text-[20px] md:text-[24px] mb-4"
               style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
             >
-              <span className="font-bold">Usage multimédia, créatif et professionnel</span> Destinée aux passionnés d'images, aux créateurs de contenu et aux technophiles, AS SHAKA X4 allie design premium et fonctionnalités intuitives. Elle permet de capturer, écouter et partager sans effort
+              Usage multimédia, créatif et professionnel
+            </h3>
+            <p 
+              className="text-black text-[15px] md:text-[17px] leading-[1.8]"
+              style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
+            >
+              Destinée aux passionnés d'images, aux créateurs de contenu et aux technophiles, AS SHAKA X4 allie design premium et fonctionnalités intuitives. Elle permet de capturer, écouter et partager sans effort.
             </p>
           </div>
 
-          <div className="w-full flex justify-center md:justify-end md:-mr-[15%] lg:-mr-[25%] relative z-0 md:translate-x-[15%] lg:translate-x-[25%]">
+          <div className="w-full flex justify-center z-0">
             <img 
               src="/images/lunettes-shakax4-detail2.png" 
               alt="Shaka X4 Design" 
-              className="w-full max-w-[800px] lg:max-w-[1000px] h-auto object-contain"
+              className="w-full max-w-[800px] h-auto object-contain"
             />
           </div>
           

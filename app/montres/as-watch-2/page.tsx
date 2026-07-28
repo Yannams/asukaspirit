@@ -11,7 +11,7 @@ export default function ASWatch2Page() {
         <div className="max-w-[1440px] w-full mx-auto flex flex-col md:flex-row items-center justify-between">
           
           {/* Left Text */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center text-left z-20 mt-20 md:mt-0 md:pl-10">
+          <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left z-20 mt-20 md:mt-0 md:pl-10">
             <h3 className="font-sans italic font-medium text-[20px] md:text-[28px] lg:text-[32px] text-white mb-4">
               Série Argentée Classique
             </h3>
