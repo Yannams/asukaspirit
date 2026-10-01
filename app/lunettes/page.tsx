@@ -32,7 +32,7 @@ export default function LunettesPage() {
               <div className="relative animate-drop-top">
                 {/* Image */}
                 <img 
-                  src="/images/as_glass_lunettes_hero.png" 
+                  src="/images/As_glass_lunettes_hero.png" 
                   alt="AS GLASS Lunettes connectées" 
                   className="w-full h-auto object-contain relative z-10"
                 />
@@ -57,7 +57,7 @@ export default function LunettesPage() {
               }}>
                 {/* Image (Flipped via CSS transform) */}
                 <img 
-                  src="/images/as_glass_lunettes_hero.png" 
+                  src="/images/As_glass_lunettes_hero.png" 
                   alt="AS GLASS Lunettes connectées reflet" 
                   className="w-full h-auto object-contain relative z-10"
                 />
@@ -320,7 +320,7 @@ export default function LunettesPage() {
           {/* Left Image */}
           <div className="w-full md:w-1/2 flex justify-center md:justify-end">
             <img 
-              src="/images/as_glass_lunettes_hero.png" 
+              src="/images/As_glass_lunettes_hero.png" 
               alt="Lunettes connectées AS GLASS" 
               className="w-full max-w-[726px] h-auto object-contain"
             />
