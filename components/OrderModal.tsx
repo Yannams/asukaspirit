@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, cloneElement, isValidElement } from "react";
+import { useState, useSyncExternalStore, cloneElement, isValidElement } from "react";
 import { createPortal } from "react-dom";
 import { X, ArrowUpRight, Check } from "lucide-react";
 
@@ -8,11 +8,11 @@ export default function OrderModal({ children, defaultAppareil = "" }: { childre
   const [isOpen, setIsOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
