@@ -3,9 +3,36 @@
 import { useRef, useEffect, useCallback, useState } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
 
+interface YTPlayer {
+  playVideo: () => void;
+  pauseVideo: () => void;
+  mute: () => void;
+  unMute: () => void;
+  destroy: () => void;
+}
+
+interface YTPlayerEvent {
+  target: YTPlayer;
+  data: number;
+}
+
 declare global {
   interface Window {
-    YT: any;
+    YT: {
+      Player: new (
+        elementId: string,
+        config: {
+          videoId: string;
+          width?: string | number;
+          height?: string | number;
+          playerVars?: Record<string, unknown>;
+          events?: {
+            onReady?: (event: YTPlayerEvent) => void;
+            onStateChange?: (event: YTPlayerEvent) => void;
+          };
+        }
+      ) => YTPlayer;
+    };
     onYouTubeIframeAPIReady: (() => void) | undefined;
   }
 }
@@ -27,7 +54,7 @@ export default function HeroVideoSection() {
   const frame1Ref = useRef<HTMLDivElement>(null);
   const frame2Ref = useRef<HTMLDivElement>(null);
   const videoBoxRef = useRef<HTMLDivElement>(null);
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
   const isPlayerReadyRef = useRef(false);
   const posterRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -185,7 +212,7 @@ export default function HeroVideoSection() {
             origin: typeof window !== "undefined" ? window.location.origin : undefined,
           },
           events: {
-            onReady: (event: any) => {
+            onReady: (event: YTPlayerEvent) => {
               if (isCancelled) return;
               isPlayerReadyRef.current = true;
               event.target.mute();
@@ -193,7 +220,7 @@ export default function HeroVideoSection() {
                 event.target.playVideo();
               }
             },
-            onStateChange: (event: any) => {
+            onStateChange: (event: YTPlayerEvent) => {
               if (isCancelled) return;
               // 1 = PLAYING
               if (event.data === 1) {
@@ -236,7 +263,9 @@ export default function HeroVideoSection() {
       if (playerRef.current && typeof playerRef.current.destroy === "function") {
         try {
           playerRef.current.destroy();
-        } catch (_) {}
+        } catch {
+          // Ignore destroy errors on unmount
+        }
         playerRef.current = null;
         isPlayerReadyRef.current = false;
       }
