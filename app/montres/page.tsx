@@ -24,7 +24,7 @@ export default function MontresPage() {
             </h1>
             
             {/* Description */}
-            <p className="font-display font-normal text-[15px] leading-[21px] text-justify text-black max-w-[450px]">
+            <p className="font-display font-normal text-[15px] leading-[21px] text-center md:text-justify text-black max-w-[450px]">
               Les montres connectées ASUKA allient élégance et technologie pour vous accompagner au quotidien. Suivi d'activité, surveillance de la santé, notifications intelligentes et contrôle de la musique : tout est conçu pour rester connecté, actif et organisé avec confort et autonomie.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function MontresPage() {
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center">
           
           {/* Left Large Image */}
-          <div className="w-full lg:w-[65%] relative shrink-0 flex justify-start">
+          <div className="w-full lg:w-[65%] relative shrink-0 flex justify-center lg:justify-start">
             <img 
               src="/images/as_watch_1_montres.png" 
               alt="AS WATCH 1" 
@@ -63,7 +63,7 @@ export default function MontresPage() {
               AS WATCH 1
             </h2>
             
-            <p className="font-sans font-normal text-[14px] leading-relaxed text-[#444444] text-justify mb-10 max-w-[480px]">
+            <p className="font-sans font-normal text-[14px] leading-relaxed text-[#444444] text-center lg:text-justify mb-10 max-w-[480px]">
               Pensée pour ceux qui ne s'arrêtent jamais, cette montre connectée allie style, robustesse et performance. Que vous soyez au bureau, en plein entraînement ou en déplacement, elle vous accompagne avec précision, confort et une autonomie durable pour relever chaque défi du quotidien.
             </p>
             
@@ -102,7 +102,7 @@ export default function MontresPage() {
               AS WATCH 2
             </h2>
             
-            <p className="font-display font-normal text-[16px] leading-normal text-black text-justify max-w-[448px] mb-8">
+            <p className="font-display font-normal text-[16px] leading-normal text-black text-center md:text-justify max-w-[448px] mb-8">
               Avec la montre connectée ASUKA Argent Classique, l'élégance rencontre l'efficacité. Discrète, légère et raffinée, elle s'adapte à votre rythme professionnel et personnel. Recevez vos notifications, suivez vos performances et améliorez votre bien-être sans jamais perdre en style. Parce que la productivité commence par une meilleure maîtrise de soi.
             </p>
           </div>
@@ -142,10 +142,10 @@ export default function MontresPage() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative flex justify-center">
           
           {/* Dark Background Container */}
-          <div className="bg-[#191919] w-full max-w-[900px] relative flex flex-col lg:flex-row items-center justify-start p-10 md:p-16 lg:p-24 z-10 min-h-[626px] ml-0 lg:-ml-24">
+          <div className="bg-[#191919] w-full max-w-[900px] relative flex flex-col lg:flex-row items-center justify-center lg:justify-start p-10 md:p-16 lg:p-24 z-10 min-h-[626px] ml-0 lg:-ml-24">
             
             {/* Left Text Content */}
-            <div className="w-full lg:w-[60%] flex flex-col items-start text-left z-20">
+            <div className="w-full lg:w-[60%] flex flex-col items-center lg:items-start text-center lg:text-left z-20">
               <p className="font-display font-medium text-[14px] leading-[1] text-[#AAAAAA] mb-4">
                 Série Outdoor Tactique
               </p>
@@ -154,7 +154,7 @@ export default function MontresPage() {
                 AS WATCH 3
               </h2>
               
-              <p className="font-sans font-normal text-[14px] leading-relaxed text-[#CCCCCC] text-justify mb-12 max-w-[480px]">
+              <p className="font-sans font-normal text-[14px] leading-relaxed text-[#CCCCCC] text-center lg:text-justify mb-12 max-w-[480px]">
                 La montre ASUKA Outdoor Tactique est plus qu'un accessoire : c'est un outil. Forgée pour résister aux environnements les plus rudes, elle accompagne les professionnels et explorateurs du quotidien. Sa solidité inspire confiance, ses capteurs avancés assurent sécurité et performance. Une montre conçue pour ceux qui n'abandonnent jamais, même quand la route devient difficile.
               </p>
               
@@ -208,7 +208,7 @@ export default function MontresPage() {
         <div className="w-full max-w-[1171px] bg-[#222222] rounded-[32px] overflow-hidden flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-16 relative">
           
           {/* Left Text Content */}
-          <div className="flex flex-col text-center md:text-left z-10 w-full md:w-1/2">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left z-10 w-full md:w-1/2">
             <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6 uppercase">
               PRÊT À AMÉLIORER VOTRE TECHNOLOGIE ?
             </h2>

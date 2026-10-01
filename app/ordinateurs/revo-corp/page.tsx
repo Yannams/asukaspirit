@@ -133,10 +133,10 @@ export default function RevoCorpPage() {
                 <div className="absolute top-0 left-0 w-full lg:w-[50vw] h-full bg-[#FCFCFC] dark:bg-neutral-900 z-0" />
                 
                 <div className="max-w-[1171px] mx-auto px-6 relative z-10">
-                  <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+                  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
                     {/* Details Section (Left) */}
-                    <div className="w-full lg:w-1/2 flex flex-col items-start text-left py-12 lg:py-0">
-                      <div className="relative z-10 w-full">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left py-12 lg:py-0">
+                      <div className="relative z-10 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
                         <h3 className="font-display font-semibold text-[30px] leading-[47px] text-[#070707] dark:text-white uppercase">
                           {product.name}
                         </h3>
@@ -144,7 +144,7 @@ export default function RevoCorpPage() {
                           {product.subtitle}
                         </p>
 
-                        <div className="w-[130px] h-[2px] bg-[#D9D9D9] mb-[50px]" />
+                        <div className="w-[130px] h-[2px] bg-[#D9D9D9] mb-[50px] mx-auto lg:mx-0" />
 
                         <div className="w-full mb-8">
                           <h4 className="text-primary font-bold text-base md:text-lg mb-6">Caractéristiques</h4>
@@ -161,12 +161,12 @@ export default function RevoCorpPage() {
                         </div>
 
                         {product.tagline && (
-                          <p className="font-display font-bold text-[18px] text-primary mb-8 max-w-[200px] leading-snug">
+                          <p className="font-display font-bold text-[18px] text-primary mb-8 max-w-[200px] leading-snug text-center lg:text-left mx-auto lg:mx-0">
                             {product.tagline}
                           </p>
                         )}
 
-                        <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                           <OrderModal defaultAppareil={product.name}>
                             <button
                               className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3.5 px-8 transition-colors flex items-center justify-center min-w-[160px]"
@@ -229,7 +229,7 @@ export default function RevoCorpPage() {
                     </div>
 
                     {/* Right Column (Details) */}
-                    <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                       <h3 className="font-display font-semibold text-[30px] leading-[47px] text-white uppercase">
                         {product.name}
                       </h3>
@@ -241,7 +241,7 @@ export default function RevoCorpPage() {
                         <h4 className="text-white text-base md:text-lg mb-8 font-medium">Caractéristiques</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
                           {product.specs.map((spec, sIdx) => (
-                            <div key={sIdx} className="flex flex-col items-start">
+                            <div key={sIdx} className="flex flex-col items-center lg:items-start">
                               <div className="flex items-center gap-3 mb-2">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
                                   <circle cx="7" cy="7" r="7" fill="#F47639"/>
@@ -257,7 +257,7 @@ export default function RevoCorpPage() {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                         <OrderModal defaultAppareil={product.name}>
                           <button
                             className="bg-[#F47639] hover:bg-[#e0652d] text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
@@ -291,7 +291,7 @@ export default function RevoCorpPage() {
                 <div className="max-w-[1171px] mx-auto px-6 relative z-10">
                   <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                     {/* Left Column (Details) */}
-                    <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                       <h3 className="font-display font-semibold text-[30px] leading-[47px] text-[#212121] dark:text-white uppercase">
                         {product.name}
                       </h3>
@@ -299,13 +299,13 @@ export default function RevoCorpPage() {
                         {product.subtitle}
                       </p>
 
-                      <div className="w-[130px] h-[2px] bg-[#D9D9D9] mb-[50px]" />
+                      <div className="w-[130px] h-[2px] bg-[#D9D9D9] mb-[50px] mx-auto lg:mx-0" />
 
                       <div className="w-full mb-8">
                         <h4 className="text-[#212121] dark:text-white font-medium text-base md:text-lg mb-8">Caractéristiques</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
                           {product.specs.map((spec, sIdx) => (
-                            <div key={sIdx} className="flex flex-col items-start">
+                            <div key={sIdx} className="flex flex-col items-center lg:items-start">
                               <div className="flex items-center gap-3 mb-2">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
                                   <circle cx="7" cy="7" r="7" fill="#F47639"/>
@@ -328,7 +328,7 @@ export default function RevoCorpPage() {
                         </p>
                       )}
 
-                      <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                         <OrderModal defaultAppareil={product.name}>
                           <button
                             className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
@@ -388,7 +388,7 @@ export default function RevoCorpPage() {
                     </div>
 
                     {/* Right Column (Details) */}
-                    <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                       <h3 className="font-display font-semibold text-[33px] leading-[47px] text-black dark:text-white uppercase mb-1">
                         {product.name}
                       </h3>
@@ -405,7 +405,7 @@ export default function RevoCorpPage() {
                         <h4 className="text-[#F47639] font-medium text-base md:text-lg mb-8">Caractéristiques</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
                           {product.specs.map((spec, sIdx) => (
-                            <div key={sIdx} className="flex flex-col items-start">
+                            <div key={sIdx} className="flex flex-col items-center lg:items-start">
                               <div className="flex items-center gap-3 mb-2">
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
                                   <circle cx="7" cy="7" r="7" fill="#F47639"/>
@@ -421,7 +421,7 @@ export default function RevoCorpPage() {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-4 mt-4">
+                      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-4">
                         <OrderModal defaultAppareil={product.name}>
                           <button
                             className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3 px-6 transition-colors flex items-center justify-center min-w-[133px]"
@@ -476,7 +476,7 @@ export default function RevoCorpPage() {
                 </div>
 
                 {/* Details Section */}
-                <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+                <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                   <h3 className="font-display font-semibold text-[30px] leading-[47px] text-[#212121] dark:text-white uppercase">
                     {product.name}
                   </h3>
@@ -488,7 +488,7 @@ export default function RevoCorpPage() {
                     <h4 className="text-white text-base md:text-lg mb-8 font-medium">Caractéristiques</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
                       {product.specs.map((spec, sIdx) => (
-                        <div key={sIdx} className="flex flex-col items-start">
+                        <div key={sIdx} className="flex flex-col items-center lg:items-start">
                           <div className="flex items-center gap-3 mb-2">
                             {/* Orange Icon */}
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
@@ -505,7 +505,7 @@ export default function RevoCorpPage() {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-4">
+                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                     <OrderModal defaultAppareil={product.name}>
                       <button
                         className="bg-[#212121] hover:bg-black text-white text-[15px] font-medium py-3.5 px-8 transition-colors flex items-center justify-center min-w-[160px]"

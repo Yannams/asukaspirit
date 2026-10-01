@@ -327,15 +327,15 @@ export default function LunettesPage() {
           </div>
 
           {/* Right Content */}
-          <div className="w-full md:w-1/2 flex items-center max-w-[500px]">
+          <div className="w-full md:w-1/2 flex flex-col items-center md:flex-row md:items-center max-w-[500px]">
             {/* Vertical Bar */}
-            <div className="bg-[#222222] flex items-center justify-center py-10 px-4 shrink-0 mr-6 md:mr-8">
+            <div className="bg-[#222222] flex items-center justify-center py-10 px-4 shrink-0 mb-6 md:mb-0 md:mr-8">
               <span className="text-white font-sans font-medium text-[16px] tracking-[0.3em] uppercase" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
                 AS GLASS
               </span>
             </div>
             {/* Paragraph */}
-            <p className="font-sans font-normal text-[15px] leading-[1.8] text-[#222222]">
+            <p className="font-sans font-normal text-[15px] leading-[1.8] text-[#222222] text-center md:text-left">
               Les lunettes connectées AS GLASS offrent une expérience technologique élégante et mains libres. Elles permettent de passer des appels, écouter de la musique et utiliser un assistant vocal via Bluetooth, avec une autonomie de 6 à 8 heures. Légères et modernes, elles s'adaptent à tous les styles de vie tout en combinant design et performance.
             </p>
           </div>
