@@ -165,6 +165,8 @@ export default function HeroVideoSection() {
 
       try {
         playerRef.current = new window.YT.Player("youtube-hero-player", {
+          width: "100%",
+          height: "100%",
           videoId: YOUTUBE_VIDEO_ID,
           playerVars: {
             autoplay: 0,
@@ -179,6 +181,7 @@ export default function HeroVideoSection() {
             showinfo: 0,
             iv_load_policy: 3,
             enablejsapi: 1,
+            cc_load_policy: 0,
             origin: typeof window !== "undefined" ? window.location.origin : undefined,
           },
           events: {
@@ -379,15 +382,32 @@ export default function HeroVideoSection() {
 
             {/* YouTube Player Container - full bleed cover without letterboxing */}
             <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-[1]">
+              <style>{`
+                #youtube-hero-player,
+                iframe#youtube-hero-player {
+                  position: absolute !important;
+                  top: 0 !important;
+                  left: 0 !important;
+                  width: 100% !important;
+                  height: 100% !important;
+                  border: none !important;
+                  pointer-events: none !important;
+                }
+              `}</style>
               <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:border-0 pointer-events-none"
+                className="pointer-events-none"
                 style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%) scale(1.2)",
                   width: "max(100%, 177.78vh)",
                   height: "max(100%, 56.25vw)",
-                  transform: "translate(-50%, -50%) scale(1.15)",
+                  minWidth: "100%",
+                  minHeight: "100%",
                 }}
               >
-                <div id="youtube-hero-player" className="w-full h-full" />
+                <div id="youtube-hero-player" style={{ width: "100%", height: "100%" }} />
               </div>
             </div>
 
