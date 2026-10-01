@@ -41,7 +41,7 @@ export default function RevoFreePage() {
               className="w-full max-w-[500px] object-contain hover:scale-105 transition-transform duration-500" 
             />
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-auto">
             <OrderModal defaultAppareil="REVO SHANGO">
               <button 
                 className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"
@@ -73,7 +73,7 @@ export default function RevoFreePage() {
               className="w-full max-w-[500px] object-contain hover:scale-105 transition-transform duration-500" 
             />
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-auto">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-auto">
             <OrderModal defaultAppareil="REVO FIFA">
               <button 
                 className="bg-[#F47639] text-white px-8 py-3.5 font-semibold text-sm hover:bg-[#e06527] transition-colors"

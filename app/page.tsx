@@ -24,27 +24,27 @@ export default function Home() {
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
             {/* Left Column: Text Content */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
+            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
               {/* Badge */}
               <div className="inline-flex items-center justify-center bg-[#EBEBEB] text-[#555555] text-xs font-semibold tracking-wider uppercase px-4 py-1.5 rounded-full mb-6">
                 ASUKA SPIRIT
               </div>
 
               {/* Headline */}
-              <h1 className="font-display font-normal text-[38px] sm:text-[55px] lg:text-[70px] xl:text-[80px] leading-[1.1] tracking-tight text-black uppercase mb-6 text-left">
+              <h1 className="font-display font-normal text-[38px] sm:text-[55px] lg:text-[70px] xl:text-[80px] leading-[1.1] tracking-tight text-black uppercase mb-6 text-center lg:text-left">
                 La marque <br />
                 <span className="font-bold text-primary">Africaine n°1</span> <br />
                 des équipements !
               </h1>
 
               {/* Subtitle */}
-              <p className="text-[#888888] text-[15px] sm:text-[17px] font-normal leading-[26px] max-w-xl mb-8 text-left">
+              <p className="text-[#888888] text-[15px] sm:text-[17px] font-normal leading-[26px] max-w-xl mb-8 text-center lg:text-left">
                 Ordinateurs, lunettes connectés, montres connectées ,<br className="hidden sm:inline" />
                 services & solutions pensés pour l'Afrique, fabriqués pour durer.
               </p>
 
               {/* Button */}
-              <div className="flex justify-start w-full">
+              <div className="flex justify-center lg:justify-start w-full">
                 <Link 
                   href="/ordinateurs" 
                   className="inline-flex items-center justify-between bg-black hover:bg-neutral-800 text-white font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"
@@ -58,11 +58,11 @@ export default function Home() {
             </div>
 
             {/* Right Column: Image */}
-            <div className="lg:col-span-5 relative flex items-end justify-center lg:justify-end h-[380px] sm:h-[480px] lg:h-[540px] w-full select-none">
+            <div className="lg:col-span-5 relative flex items-end justify-center lg:justify-end h-[360px] sm:h-[480px] lg:h-[540px] w-full select-none mt-10 sm:mt-14 lg:mt-0">
               <img 
                 src="/images/casque.png" 
                 alt="Lunettes Connectées ASUKA" 
-                className="w-full h-full object-contain lg:object-right-bottom scale-[1.1] lg:scale-[1.2] origin-bottom-right drop-shadow-xl"
+                className="w-[calc(100%+3rem)] -mx-6 sm:w-full sm:mx-0 h-full object-contain lg:object-right-bottom scale-[1.3] sm:scale-[1.15] lg:scale-[1.2] origin-bottom drop-shadow-xl translate-y-8 sm:translate-y-10 lg:translate-y-0"
               />
             </div>
           </div>
@@ -98,8 +98,8 @@ export default function Home() {
 
           {/* Body */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <p className="font-display font-light text-[25px] leading-snug text-black text-left max-w-[459px]">
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-start gap-6 text-center lg:text-left">
+              <p className="font-display font-light text-[25px] leading-snug text-black max-w-[459px] mx-auto lg:mx-0">
                 Robustesse, performance et fiabilité <span className="font-medium">la gamme REVO CORP</span> est conçue pour les entreprises, les équipes exigeantes et les environnements intensifs.
               </p>
               
@@ -168,8 +168,8 @@ export default function Home() {
 
           {/* Body */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 flex flex-col gap-6 relative z-10">
-              <p className="font-display font-light text-[25px] leading-snug text-left text-neutral-300 max-w-[311px]">
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-start gap-6 relative z-10 text-center lg:text-left">
+              <p className="font-display font-light text-[25px] leading-snug text-neutral-300 max-w-[311px] mx-auto lg:mx-0">
                 Légère, accessible et puissante, <span className="font-medium">la gamme REVO FREE</span> accompagne les étudiants, créatifs et utilisateurs du quotidien partout où ils vont.
               </p>
               
@@ -193,11 +193,11 @@ export default function Home() {
         <img 
           src="/images/laptop_free.png" 
           alt="REVO FREE Laptop" 
-          className="absolute right-0 top-[15%] lg:top-[-25%] h-[110%] md:h-[140%] lg:h-[170%] w-auto max-w-none object-contain select-none pointer-events-none z-0"
+          className="absolute right-0 top-[45%] md:top-[20%] lg:top-[-25%] h-[80%] md:h-[120%] lg:h-[170%] w-auto max-w-none object-contain select-none pointer-events-none z-0"
         />
       </section>
       {/* 4. Section Wearables (Lunettes & Montres Connectées Side-by-Side) */}
-      <section id="wearables" className="py-12 md:py-16 bg-[#FAFAFA] scroll-mt-[80px] overflow-hidden">
+      <section id="wearables" className="py-30 md:py-50 bg-[#FAFAFA] scroll-mt-[80px] overflow-hidden">
         <div className="max-w-[1171px] mx-auto px-6">
           {/* Section title matching Figma specs */}
           <div className="text-center mb-12 sm:mb-16">
@@ -231,13 +231,13 @@ export default function Home() {
                   <img 
                     src="/images/shaka.png" 
                     alt="Lunettes Connectées ASUKA" 
-                    className="relative w-auto h-full object-contain drop-shadow-2xl z-10 scale-[1.50] sm:scale-[1.4] lg:scale-[2.10] origin-left -translate-x-2 md:-translate-x-9"
+                    className="relative w-auto h-full object-contain drop-shadow-2xl z-10 scale-[1.50] sm:scale-[1.4] lg:scale-[2.10] origin-left -translate-x-2 md:translate-x-"
                   />
                 </div>
 
                 {/* Description - Figma exact size (20px, light) */}
                 <div className="w-full flex justify-center">
-                  <p className="font-display font-light text-[18px] md:text-[20px] leading-[26px] text-neutral-700 max-w-[459px] mt-16 sm:mt-24 lg:mt-[220px] mb-8 text-justify">
+                  <p className="font-display font-light text-[18px] md:text-[20px] leading-[26px] text-neutral-700 max-w-[459px] mt-16 sm:mt-24 lg:mt-[220px] mb-8 text-center md:text-justify">
                     <span className="font-medium text-black">Les lunettes connectées ASUKA fusionnent style africain</span> contemporain et technologie embarquée notifications, audio, photos, vidéos, IA, navigation. Tout dans votre regard.
                   </p>
                 </div>
@@ -284,7 +284,7 @@ export default function Home() {
 
                 {/* Description - Figma exact size (20px, light) */}
                 <div className="w-full flex justify-center">
-                  <p className="font-display font-light text-[18px] md:text-[20px] leading-[26px] text-neutral-700 max-w-[459px] mt-16 sm:mt-24 lg:mt-[240px] mb-8 text-justify">
+                  <p className="font-display font-light text-[18px] md:text-[20px] leading-[26px] text-neutral-700 max-w-[459px] mt-16 sm:mt-24 lg:mt-[240px] mb-8 text-center md:text-justify">
                     Conçue pour l'Africain actif suivi santé, alertes intelligentes, autonomie longue durée. Une montre qui travaille autant que vous.
                   </p>
                 </div>
@@ -312,21 +312,21 @@ export default function Home() {
         <div className="max-w-[1171px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
             {/* Left side text */}
-            <div className="lg:col-span-6 flex flex-col gap-6 justify-center">
+            <div className="lg:col-span-6 flex flex-col items-center lg:items-start gap-6 justify-center">
               {/* Dr. ASUKA custom logo */}
-              <div className="w-full max-w-[458px] overflow-visible">
+              <div className="w-full max-w-[458px] overflow-hidden flex justify-center lg:justify-start mx-auto lg:mx-0">
                 <img 
                   src="/images/Dr_ASUKA.png" 
                   alt="Dr. ASUKA" 
-                  className="w-full aspect-square object-contain -ml-[19%] -mt-[15%] -mb-[22%]"
+                  className="w-full aspect-square object-contain lg:-ml-[19%] -mt-[15%] -mb-[22%]"
                 />
               </div>
               
-              <p className="font-display font-light text-[23px] leading-[32px] text-justify text-black max-w-[377px]">
+              <p className="font-display font-light text-[23px] leading-[32px] text-center lg:text-justify text-black max-w-[377px]">
                 <span className="font-bold">Dr ASUKA</span> est une marque déposée de <span className="font-bold">AS WORLD TECH</span>, ayant pour mission d'apporter un professionnalisme aux standards internationaux dans le secteur de la réparation et de la maintenance des équipements électroniques.
               </p>
 
-              <div className="mt-4">
+              <div className="mt-4 flex justify-center lg:justify-start">
                 <Link 
                   href="https://docteurasuka.com"
                   target="_blank"
@@ -371,7 +371,7 @@ export default function Home() {
                   alt="AS Pay" 
                   className="w-[86px] h-[136.45px] object-contain"
                 />
-                <p className="font-display font-normal text-[14px] leading-relaxed text-justify text-white max-w-[307px] mx-auto">
+                <p className="font-display font-normal text-[14px] leading-relaxed text-center md:text-justify text-white max-w-[307px] mx-auto">
                   AS Pay supprime la barrière du prix. Financement immédiat via votre banque, remboursement progressif la tech ASUKA est accessible à tous, tout de suite.
                 </p>
               </div>
@@ -385,7 +385,7 @@ export default function Home() {
                   alt="Assuk Assur" 
                   className="w-[157px] h-[129px] object-contain"
                 />
-                <p className="font-display font-normal text-[14px] leading-relaxed text-justify text-neutral-600 max-w-[307px] mx-auto">
+                <p className="font-display font-normal text-[14px] leading-relaxed text-center md:text-justify text-neutral-600 max-w-[307px] mx-auto">
                   En partenariat avec SUNU Assurances, Assuk Assur couvre casse, vol, dégâts et surtensions. Réparation ou remplacement rapide tu investis une fois, on protège pour longtemps.
                 </p>
               </div>
@@ -395,13 +395,13 @@ export default function Home() {
           {/* Section Chiffres (Single Horizontal Black statistics bar matching Figma design) */}
           <div className="flex flex-col lg:flex-row items-center justify-between bg-[#212121] rounded-[50px] px-10 py-8 lg:py-0 lg:h-[136px] max-w-[1171px] w-full gap-8 lg:gap-4 shadow-xl select-none">
             {/* Stat 1 */}
-            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+            <div className="flex items-center gap-4 justify-center lg:justify-center w-full lg:w-auto lg:flex-1">
               <div className="text-white shrink-0">
                 <Package size={40} strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-[2px]">
                 <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">+120</span>
-                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-center lg:text-left">
                   Produits de qualité<br className="hidden sm:inline" /> supérieure
                 </span>
               </div>
@@ -411,13 +411,13 @@ export default function Home() {
             <div className="hidden lg:block h-[38px] w-[1px] bg-[#D9D9D9]/30 shrink-0" />
 
             {/* Stat 2 */}
-            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+            <div className="flex items-center gap-4 justify-center lg:justify-center w-full lg:w-auto lg:flex-1">
               <div className="text-white shrink-0">
                 <Users size={40} strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-[2px]">
                 <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">2.5M+</span>
-                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-center lg:text-left">
                   Clients satisfaits
                 </span>
               </div>
@@ -427,13 +427,13 @@ export default function Home() {
             <div className="hidden lg:block h-[38px] w-[1px] bg-[#D9D9D9]/30 shrink-0" />
 
             {/* Stat 3 */}
-            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+            <div className="flex items-center gap-4 justify-center lg:justify-center w-full lg:w-auto lg:flex-1">
               <div className="text-white shrink-0">
                 <Award size={40} strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-[2px]">
                 <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">98%</span>
-                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-center lg:text-left">
                   Taux de satisfaction
                 </span>
               </div>
@@ -443,13 +443,13 @@ export default function Home() {
             <div className="hidden lg:block h-[38px] w-[1px] bg-[#D9D9D9]/30 shrink-0" />
 
             {/* Stat 4 */}
-            <div className="flex items-center gap-4 justify-start w-full lg:w-auto lg:flex-1 lg:justify-center">
+            <div className="flex items-center gap-4 justify-center lg:justify-center w-full lg:w-auto lg:flex-1">
               <div className="text-white shrink-0">
                 <Headphones size={40} strokeWidth={1.5} />
               </div>
               <div className="flex flex-col gap-[2px]">
                 <span className="font-sans font-bold text-[32px] lg:text-[40px] xl:text-[48px] leading-none tracking-[-0.04em] text-primary">24/7</span>
-                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-justify">
+                <span className="text-white text-[12px] lg:text-[13px] leading-none font-normal text-center lg:text-left">
                   Assistance d'expert
                 </span>
               </div>
@@ -550,7 +550,7 @@ export default function Home() {
                     />
                   </div>
 
-                  <div className="flex justify-end pt-2">
+                  <div className="flex justify-center sm:justify-end pt-2">
                     <button
                       type="submit"
                       className="inline-flex items-center justify-between bg-white hover:bg-neutral-100 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[17px] pr-[2px] w-[250px] h-[47px] transition-all duration-300 group"

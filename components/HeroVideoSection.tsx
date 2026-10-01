@@ -3,13 +3,50 @@
 import { useRef, useEffect, useCallback, useState } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
 
+interface YTPlayer {
+  playVideo: () => void;
+  pauseVideo: () => void;
+  mute: () => void;
+  unMute: () => void;
+  destroy: () => void;
+}
+
+interface YTPlayerEvent {
+  target: YTPlayer;
+  data: number;
+}
+
+declare global {
+  interface Window {
+    YT: {
+      Player: new (
+        elementId: string,
+        config: {
+          videoId: string;
+          width?: string | number;
+          height?: string | number;
+          playerVars?: Record<string, unknown>;
+          events?: {
+            onReady?: (event: YTPlayerEvent) => void;
+            onStateChange?: (event: YTPlayerEvent) => void;
+          };
+        }
+      ) => YTPlayer;
+    };
+    onYouTubeIframeAPIReady: (() => void) | undefined;
+  }
+}
+
+const YOUTUBE_VIDEO_ID = "HqRiiL31QJk";
+
 /**
  * HeroVideoSection
  *
  * 3-layer card structure + smoothed scroll via lerp.
- * Uses a real <video> element that plays when fullscreen is reached.
- * Pauses when user scrolls past the section.
- * Includes a mute/unmute toggle button.
+ * Integrates YouTube video (HqRiiL31QJk) with high-res poster and IFrame Player API.
+ * Plays when fullscreen is reached (p >= 0.92).
+ * Pauses when user scrolls past or away from the section.
+ * Includes play button and a mute/unmute toggle button.
  */
 export default function HeroVideoSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -17,7 +54,9 @@ export default function HeroVideoSection() {
   const frame1Ref = useRef<HTMLDivElement>(null);
   const frame2Ref = useRef<HTMLDivElement>(null);
   const videoBoxRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
+  const isPlayerReadyRef = useRef(false);
+  const posterRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const playBtnRef = useRef<HTMLButtonElement>(null);
 
@@ -39,6 +78,22 @@ export default function HeroVideoSection() {
   const easeOut = (t: number) => 1 - (1 - t) ** 3;
   const easeInOut = (t: number) =>
     t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
+
+  // Helper to play/pause YT player safely
+  const safePlay = useCallback(() => {
+    if (playerRef.current && isPlayerReadyRef.current && typeof playerRef.current.playVideo === "function") {
+      if (anim.current.userClicked && !isMuted) {
+        playerRef.current.unMute();
+      }
+      playerRef.current.playVideo();
+    }
+  }, [isMuted]);
+
+  const safePause = useCallback(() => {
+    if (playerRef.current && isPlayerReadyRef.current && typeof playerRef.current.pauseVideo === "function") {
+      playerRef.current.pauseVideo();
+    }
+  }, []);
 
   // ---- RENDER FRAME ----
   const render = useCallback((p: number) => {
@@ -105,20 +160,12 @@ export default function HeroVideoSection() {
     const shouldPlay = p >= 0.92 && anim.current.isVisible;
     if (shouldPlay && !anim.current.isPlaying) {
       anim.current.isPlaying = true;
-      if (videoRef.current) {
-        // Unmute if user has clicked (browser allows audio after gesture)
-        if (anim.current.userClicked) {
-          videoRef.current.muted = false;
-        }
-        videoRef.current.play().catch(() => {});
-      }
+      safePlay();
     } else if (!shouldPlay && anim.current.isPlaying) {
       anim.current.isPlaying = false;
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
+      safePause();
     }
-  }, []);
+  }, [safePlay, safePause]);
 
   // ---- SMOOTH ANIMATION LOOP + SCROLL LISTENER ----
   const SMOOTH = 0.1;
@@ -134,6 +181,96 @@ export default function HeroVideoSection() {
 
     a.rafId = requestAnimationFrame(loop);
   }, [render]);
+
+  // ---- YOUTUBE IFRAME API INITIALIZATION ----
+  useEffect(() => {
+    let isCancelled = false;
+
+    const initYT = () => {
+      if (isCancelled || playerRef.current) return;
+      if (!window.YT || !window.YT.Player) return;
+
+      try {
+        playerRef.current = new window.YT.Player("youtube-hero-player", {
+          width: "100%",
+          height: "100%",
+          videoId: YOUTUBE_VIDEO_ID,
+          playerVars: {
+            autoplay: 0,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            loop: 1,
+            modestbranding: 1,
+            playlist: YOUTUBE_VIDEO_ID,
+            playsinline: 1,
+            rel: 0,
+            showinfo: 0,
+            iv_load_policy: 3,
+            enablejsapi: 1,
+            cc_load_policy: 0,
+            origin: typeof window !== "undefined" ? window.location.origin : undefined,
+          },
+          events: {
+            onReady: (event: YTPlayerEvent) => {
+              if (isCancelled) return;
+              isPlayerReadyRef.current = true;
+              event.target.mute();
+              if (anim.current.isPlaying) {
+                event.target.playVideo();
+              }
+            },
+            onStateChange: (event: YTPlayerEvent) => {
+              if (isCancelled) return;
+              // 1 = PLAYING
+              if (event.data === 1) {
+                if (posterRef.current) {
+                  posterRef.current.style.opacity = "0";
+                }
+              }
+              // 0 = ENDED (loop fallback)
+              if (event.data === 0) {
+                event.target.playVideo();
+              }
+            },
+          },
+        });
+      } catch (e) {
+        console.error("YouTube Player init error:", e);
+      }
+    };
+
+    if (window.YT && window.YT.Player) {
+      initYT();
+    } else {
+      const existingScript = document.getElementById("youtube-iframe-api-script");
+      if (!existingScript) {
+        const tag = document.createElement("script");
+        tag.id = "youtube-iframe-api-script";
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
+      }
+
+      const prevOnReady = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        if (typeof prevOnReady === "function") prevOnReady();
+        initYT();
+      };
+    }
+
+    return () => {
+      isCancelled = true;
+      if (playerRef.current && typeof playerRef.current.destroy === "function") {
+        try {
+          playerRef.current.destroy();
+        } catch {
+          // Ignore destroy errors on unmount
+        }
+        playerRef.current = null;
+        isPlayerReadyRef.current = false;
+      }
+    };
+  }, []);
 
   // ---- SCROLL LISTENER ----
   useEffect(() => {
@@ -163,15 +300,13 @@ export default function HeroVideoSection() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         anim.current.isVisible = entry.isIntersecting;
-        // If section is no longer visible, pause the video
-        if (!entry.isIntersecting && videoRef.current && anim.current.isPlaying) {
-          videoRef.current.pause();
+        if (!entry.isIntersecting && anim.current.isPlaying) {
+          safePause();
           anim.current.isPlaying = false;
         }
-        // If section becomes visible again and progress is high enough, resume
-        if (entry.isIntersecting && videoRef.current && anim.current.currentProgress >= 0.92) {
+        if (entry.isIntersecting && anim.current.currentProgress >= 0.92) {
           anim.current.isPlaying = true;
-          videoRef.current.play().catch(() => {});
+          safePlay();
         }
       },
       { threshold: 0.05 }
@@ -179,11 +314,11 @@ export default function HeroVideoSection() {
 
     observer.observe(section);
     return () => observer.disconnect();
-  }, []);
+  }, [safePause, safePlay]);
 
   const handlePlayClick = useCallback(() => {
-    // Mark user gesture — allows unmuting later
     anim.current.userClicked = true;
+    safePlay();
 
     if (sectionRef.current && anim.current.currentProgress < 0.9) {
       const el = sectionRef.current;
@@ -192,16 +327,22 @@ export default function HeroVideoSection() {
         behavior: "smooth",
       });
     }
-  }, []);
+  }, [safePlay]);
 
   const handleMuteToggle = useCallback(() => {
     anim.current.userClicked = true;
-    if (videoRef.current) {
-      const newMuted = !videoRef.current.muted;
-      videoRef.current.muted = newMuted;
-      setIsMuted(newMuted);
+    if (playerRef.current && isPlayerReadyRef.current && typeof playerRef.current.mute === "function") {
+      if (isMuted) {
+        playerRef.current.unMute();
+        setIsMuted(false);
+      } else {
+        playerRef.current.mute();
+        setIsMuted(true);
+      }
+    } else {
+      setIsMuted((prev) => !prev);
     }
-  }, []);
+  }, [isMuted]);
 
   return (
     <section
@@ -257,24 +398,47 @@ export default function HeroVideoSection() {
               backgroundColor: "#171717",
               zIndex: 2,
               boxShadow: "0 20px 50px rgba(0,0,0,0.1)",
+              isolation: "isolate",
             }}
           >
-            {/* Real Video Element — #t=2 loads frame at 2s as thumbnail */}
-            <video
-              ref={videoRef}
-              src="/images/Video_Institutionelle.mp4#t=2"
-              muted
-              loop
-              playsInline
-              preload="auto"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
+            {/* High-res Poster preview before playback */}
+            <img
+              ref={posterRef}
+              src={`https://i.ytimg.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
+              alt="Asuka Spirit Vidéo Aperçu"
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none z-[2]"
             />
+
+            {/* YouTube Player Container - full bleed cover without letterboxing */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-[1]">
+              <style>{`
+                #youtube-hero-player,
+                iframe#youtube-hero-player {
+                  position: absolute !important;
+                  top: 0 !important;
+                  left: 0 !important;
+                  width: 100% !important;
+                  height: 100% !important;
+                  border: none !important;
+                  pointer-events: none !important;
+                }
+              `}</style>
+              <div
+                className="pointer-events-none"
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%) scale(1.2)",
+                  width: "max(100%, 177.78vh)",
+                  height: "max(100%, 56.25vw)",
+                  minWidth: "100%",
+                  minHeight: "100%",
+                }}
+              >
+                <div id="youtube-hero-player" style={{ width: "100%", height: "100%" }} />
+              </div>
+            </div>
 
             {/* Black overlay */}
             <div
@@ -285,6 +449,7 @@ export default function HeroVideoSection() {
                 backgroundColor: "#000",
                 opacity: 0.17,
                 zIndex: 3,
+                pointerEvents: "none",
               }}
             />
 
@@ -302,13 +467,14 @@ export default function HeroVideoSection() {
               <button
                 ref={playBtnRef}
                 onClick={handlePlayClick}
-                className="rounded-full bg-white hover:bg-neutral-100 text-black flex items-center justify-center"
+                className="rounded-full bg-white hover:bg-neutral-100 text-black flex items-center justify-center cursor-pointer"
                 style={{
                   width: 70,
                   height: 70,
                   boxShadow: "0 10px 40px rgba(0,0,0,0.25)",
-                  transition: "background-color 0.2s",
+                  transition: "background-color 0.2s, transform 0.2s",
                 }}
+                aria-label="Lire la vidéo"
               >
                 <Play
                   size={22}
@@ -320,12 +486,13 @@ export default function HeroVideoSection() {
             {/* Mute/Unmute button — bottom right */}
             <button
               onClick={handleMuteToggle}
-              className="absolute bottom-5 right-5 z-20 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-200"
+              className="absolute bottom-5 right-5 z-20 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-200 cursor-pointer"
               style={{
                 width: 44,
                 height: 44,
               }}
               title={isMuted ? "Activer le son" : "Couper le son"}
+              aria-label={isMuted ? "Activer le son" : "Couper le son"}
             >
               {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
             </button>

@@ -123,13 +123,13 @@ export default function OrdinateursPage() {
             <span className="font-display font-normal text-[16px] text-primary bg-[#E9E9E9] py-[6px] px-[18px] rounded-[48px] mb-6 inline-block">
               Gamme Revo Corp
             </span>
-            <h2 className="font-display font-light text-[64px] lg:text-[96px] leading-[1] text-[#222222] mb-6 uppercase text-left">
+            <h2 className="font-display font-light text-[64px] lg:text-[96px] leading-[1] text-[#222222] mb-6 uppercase text-center lg:text-left">
               REVO<br />CORP
             </h2>
-            <h3 className="font-display font-light text-[24px] lg:text-[29px] leading-[1.2] text-[#222222] mb-8 text-left">
+            <h3 className="font-display font-light text-[24px] lg:text-[29px] leading-[1.2] text-[#222222] mb-8 text-center lg:text-left">
               La puissance professionnelle pensée pour l'Afrique.
             </h3>
-            <p className="font-display font-normal text-[18px] lg:text-[21px] leading-[1.5] text-[#222222] mb-10 text-left">
+            <p className="font-display font-normal text-[18px] lg:text-[21px] leading-[1.5] text-[#222222] mb-10 text-center lg:text-left">
               Conçue pour les administrations, les entreprises et les organisations, <span className="font-bold">REVO CORP</span> répond aux exigences des environnements professionnels modernes.
             </p>
 
@@ -191,7 +191,7 @@ export default function OrdinateursPage() {
           </div>
 
           {/* Right Column: Text and Laptop Slice */}
-          <div className="flex flex-col w-full max-w-[550px] text-center lg:text-left z-10">
+          <div className="flex flex-col w-full max-w-[550px] text-center lg:text-left items-center lg:items-start z-10">
             <h2 className="font-display font-light text-[64px] lg:text-[96px] leading-[1] text-[#222222] mb-10 uppercase">
               LA<br />VISION<br />D'ASUKA<br />SPIRIT
             </h2>

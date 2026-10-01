@@ -9,11 +9,11 @@ export default function ContactPage() {
         {/* Main Content Area */}
         <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center pt-12 relative">
           {/* Left Side: Text */}
-          <div className="flex flex-col items-start z-10 w-full lg:w-1/2 pt-10 lg:pt-0">
+          <div className="flex flex-col items-center lg:items-start z-10 w-full lg:w-1/2 pt-10 lg:pt-0">
             <div className="font-montserrat bg-[#E9E9E9] text-[#222222] h-[32px] rounded-[48px] px-[18px] py-[6px] text-[16px] font-normal leading-none mb-6 flex items-center justify-center w-max">
               Contactez-nous
             </div>
-            <h1 className="font-montserrat text-[30px] font-medium leading-[44px] text-[#222222] uppercase max-w-[399px]">
+            <h1 className="font-montserrat text-[30px] font-medium leading-[44px] text-[#222222] uppercase max-w-[399px] text-center lg:text-left">
               Contactez-nous, dites-nous comment nous pouvons aider
             </h1>
           </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
             <h2 className="font-montserrat text-2xl md:text-[28px] font-semibold text-[#1A1A1A] uppercase text-center mb-12 tracking-wide">
               ENVOYEZ-NOUS UN MESSAGE
             </h2>
-            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center lg:items-start">
             {/* Map Side */}
             <div className="w-full h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-lg relative bg-gray-100">
               <iframe
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 <textarea rows={5} placeholder="Votre message..." className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#F8753D] focus:ring-1 focus:ring-[#F8753D] transition-colors text-sm resize-none"></textarea>
               </div>
 
-              <div className="flex justify-end mt-2">
+              <div className="flex justify-center md:justify-end mt-2">
                 <button className="bg-[#242424] hover:bg-[#1a1a1a] transition-colors text-white text-sm font-medium rounded-full py-2 pl-6 pr-2 flex items-center gap-4 group">
                   Envoyez le message
                   <div className="bg-[#F8753D] rounded-full p-2 group-hover:scale-105 transition-transform">
