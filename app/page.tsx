@@ -458,6 +458,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 6b. Section Nos Programmes (Étudiant Connecté) */}
+      <section id="programmes" className="py-16 bg-white border-t border-neutral-100 scroll-mt-[80px]">
+        <div className="max-w-[1171px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display font-medium text-[12px] tracking-[6px] text-black">
+              Nos programmes
+            </h2>
+          </div>
+
+          {/* Full-width Étudiant Connecté card */}
+          <div className="relative w-full rounded-[50px] overflow-hidden shadow-2xl bg-gradient-to-br from-[#e50000] via-[#cc0000] to-[#8a0000] text-white min-h-[420px] flex flex-col lg:flex-row items-center justify-between">
+            {/* Layer: Carte d'Afrique en filigrane lumineux */}
+            <img
+              src="/images/etudiant-map.png"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none select-none absolute right-[-5%] md:right-[8%] top-1/2 -translate-y-1/2 h-[125%] w-auto object-contain opacity-25 mix-blend-screen"
+            />
+
+            {/* Left Content: Nom, description & CTA */}
+            <div className="relative z-10 w-full lg:w-[54%] p-8 sm:p-12 lg:p-16 flex flex-col items-center lg:items-start text-center lg:text-left gap-5">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 text-[11px] font-semibold uppercase tracking-[2.5px] text-[#fee42d]">
+                Programme AS WORLD TECH
+              </span>
+
+              <h3 className="inline-flex items-start font-display font-extrabold text-[26px] sm:text-[34px] lg:text-[38px] leading-[1.08] uppercase text-white tracking-tight whitespace-nowrap">
+                <span>Étudiant Connecté</span>
+                <img
+                  src="/images/etudiant-connecte-icon.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="w-6 h-6 sm:w-8 sm:h-8 ml-1 -mt-2 object-contain shrink-0"
+                />
+              </h3>
+
+              <p className="font-display font-normal text-[15px] leading-relaxed text-white/90 max-w-[440px]">
+                1 étudiant, 1 ordinateur ASUKA SPIRIT : un PC accessible avec paiement échelonné sur 24 mois et connexion internet incluse pour réussir ses études.
+              </p>
+
+              <a
+                href={process.env.NEXT_PUBLIC_ETUDIANT_CONNECTE_URL || "https://etudiant-connecte.asukaspirit.com"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-between bg-white hover:bg-neutral-100 text-black font-medium text-[15px] leading-[26px] rounded-full pl-[20px] pr-[2px] w-[265px] h-[47px] transition-all duration-300 group mt-2 shadow-lg"
+              >
+                <span>Découvrir le programme</span>
+                <div className="w-[43px] h-[43px] rounded-full bg-[#e50000] flex items-center justify-center text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0">
+                  <ArrowUpRight size={18} />
+                </div>
+              </a>
+            </div>
+
+            {/* Right Visual: Étudiants détourés */}
+            <div className="relative z-10 w-full lg:w-[46%] h-[280px] sm:h-[340px] lg:h-[420px] flex items-end justify-center lg:justify-end self-end">
+              <img
+                src="/images/etudiant-personne.png"
+                alt="Étudiants équipés d'ordinateurs Asuka Spirit"
+                className="h-full w-auto max-w-none object-contain object-bottom drop-shadow-[0_18px_35px_rgba(0,0,0,0.45)] select-none pointer-events-none"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 7. Section Ils Nous Font Confiance (Logos) */}
       <section className="py-10 bg-[#FAFAFA] border-y border-neutral-100">
         <div className="max-w-[1171px] mx-auto px-6 text-center">
