@@ -169,10 +169,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       products.find(
         (p) =>
           normalizeKey(p.name) === target ||
-          normalizeKey(p.slug) === target ||
+          normalizeKey(p.slug) === target
+      ) ||
+      products.find(
+        (p) =>
           normalizeKey(p.name).includes(target) ||
           target.includes(normalizeKey(p.name))
-      ) || products[0]
+      ) ||
+      products[0]
     );
   };
 
